@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module active="1" backend_controller="ArticleBackend" frontend_controller="ArticleFrontend" model="ArticleModel" name="article" parent_name="articles" path="/modules/article" relational="1" title="Notas">
+  <options>
+    <group name="navigation" label="Artículos" order="5" group="content">
+      <option name="item" label="{$language/navigation/title_1}" url="list" access_level=""/>
+      <option name="item" label="{$language/navigation/title_2}" url="add" access_level=""/>
+    </group>
+    <group name="settings">
+      <option name="access_level" value="administrator,editor,redactor"/>
+      <option name="geolocation" value="false"/>
+      <option name="autosave" value="true"/>
+      <option name="deferredPublication" value="false"/>
+    </group>
+    <group name="repository">
+      <option name="xml" value="content/xml/{$module}"/>
+      <option name="json" value="content/json/{$module}"/>
+    </group>
+    <group name="categories">
+      <option type="parent" value="2" label="{$language/item_editor/title_categories}"/>
+    </group>
+    <!-- <group name="element_parent">
+      <option label="{$language/item_editor/element_parent/feedreader/title}" name="feedreader"/>
+    </group> -->
+    <group name="repository">
+      <option name="target" value="content/autosave"/>
+    </group>
+    <group name="relations">
+      <option callback_class="" callback_method="" name="clip" label="Clips de video asociados" multimedias="1"/>
+      <option callback_class="" callback_method="" name="article" label="Notas asociadas" multimedias="1"/>
+      <option callback_class="" callback_method="" name="promo" label="Promos relacionadas" multimedias="1"/>
+    </group>
+    <group name="multimedias">
+      <option name="image" type_id="1" label="Imágenes asociadas" category_id="3"/>
+    </group>
+    <group name="events">
+      <event name="Article.Add" handler_class="ArticleAccess" handler_method="EventAdd" priority="9"/>
+      <event name="Article.List" handler_class="ArticleAccess" handler_method="EventList" priority="9"/>
+    </group>
+  </options>
+  <rewrite debug="0">
+    <backend>
+      <rule trigger="Article.List" match="\/{$adminPath}\/article\/list\/?$" apply="RenderDefault" args="" access_level="" redirect=""/>
+      <rule trigger="Article.Add" match="\/{$adminPath}\/article\/add\/?$" apply="RenderAdd" args="" access_level="" redirect=""/>
+      <!-- <rule match="\/{$adminPath}\/article\/list\/?$" apply="RenderList" args="" trigger="Article.List" access_level="" redirect=""/> -->
+      <rule match="\/{$adminPath}\/article\/autosave\/?$" apply="BackAutosave" args="" access_level="" redirect=""/>
+    </backend>
+    <frontend>
+      <!-- Notas desde google analytics (con categoría) -->
+      <rule match="^\/(.*)\/article\/([0-9]+)$" apply="FrontRedirectUrl" args="id=$2"/>
+      <!-- Ficha -->
+      <rule match="\/article\/([0-9]+)\/(.[^&amp;]*)?(\?)?(.*)$" apply="RenderItem" args="id=$1&amp;slug=$2"/>
+      <!-- 
+        Otras nomenclaturas para ficha 
+        <rule match="\/([0-9]{4})\/([0-9]{2})\/([0-9]{2})\/([0-9]+)\/(.[^&amp;]*)?(.*)$" apply="RenderItem" args="id=$4"/>
+        <rule match="\/([0-9]+)-(.[^&amp;]*)?(.*)$" apply="RenderItem" args="id=$1"/> 
+		  -->
+      <rule match="^\/article\/list\/ajax\/$" apply="RenderAjaxList" args=""/>
+      <!-- secciones -->
+      <rule match="^\/notas\/([-a-z0-9]+)\/t([0-9]+)-(.*)(\?page=)?([0-9]+)?" apply="RenderCollection" args="categoryName=$1&amp;tag_id=$2&amp;%{QUERY_STRING}"/>
+      <rule match="^\/notas\/([-a-z0-9]+)\/?(\?page=)?([0-9]+)?" apply="RenderCollection" args="categoryName=$1&amp;%{QUERY_STRING}"/>
+      <rule match="^\/notas\/?(\?page=)?([0-9]+)?" apply="RenderCollection" args="%{QUERY_STRING}"/>
+      <rule match="^\/t([0-9]+)-(.*)" apply="RenderCollection" args="tag_id=$1&amp;%{QUERY_STRING}"/>
+    </frontend>
+  </rewrite>
+</module>

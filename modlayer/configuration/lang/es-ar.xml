@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language>
+	<system_wide>
+		<created_by_system>Importación</created_by_system>
+		<published_by_system>Sistema</published_by_system>
+		<search_input>Busca en módulo</search_input>
+		<search>Buscar</search>
+		<btn_search>Buscar</btn_search>
+		<user_profile>Editar mis datos</user_profile>
+		<user_drafts>Borradores</user_drafts>
+		<logout>Salir</logout>
+		<ok>Ok</ok>
+		<viewsite>Ver</viewsite>
+		<method_not_implemented>El método %s no fué implementado en el módulo: %s</method_not_implemented>
+		<class_user>El sistema tiene configurado restricciones de usuario para el Frontend pero no existe la clase "User" para autenticarlo</class_user>
+		<event_callback_error>El metodo %s no es un llamado valido</event_callback_error>
+		<xsl_param_key_error>El parámetro XSL "%s" no puede recibir un array como valor.</xsl_param_key_error>
+
+	</system_wide>
+	<login>
+		<label_user>Nombre de usuario</label_user>
+		<label_pass>Contraseña</label_pass>
+		<btn_login>Ingresar</btn_login>
+	</login>
+	<nav_menu>
+		<administration>Administración</administration>
+		<preferences>Preferencias</preferences>
+		<module_config>Configuración Módulos</module_config>
+	</nav_menu>
+	<model_exceptions>
+		<missing_table>La tabla %s no existe en la db</missing_table>
+		<missing_field>El campo %s no existe en la db</missing_field>
+		<invalid_field>Modelo de datos: El campo %s no es válido. Se esperaba un %s</invalid_field>
+	</model_exceptions>
+	<item_editor>
+		<page_title>Editar</page_title>
+		<btn_cancel>Cancelar</btn_cancel>
+		<btn_back>Guardar y volver</btn_back>
+		<btn_save>Guardar</btn_save>
+		<btn_delete>Eliminar</btn_delete>
+		<label_delete>Eliminar</label_delete>
+		<btn_add>Agregar</btn_add>
+		<btn_list>Listar</btn_list>
+		<unlink>Borrar Relación</unlink>
+		<unlink_parent_child>Eliminar vínculo padre &lt; hijo</unlink_parent_child>
+		<auto_import>Importación automática</auto_import>
+		<alert_no_relation>Sin</alert_no_relation>
+		<labels>
+			<radio_yes>Si</radio_yes>
+			<radio_no>No</radio_no>
+		</labels>
+		<element_parent>
+			<label_empty>No hay ninguna relación.</label_empty>
+		</element_parent>
+		<roles>
+			<person>Personas con Roles</person>
+			<delete_role>Eliminar Rol</delete_role>
+			<btn_delete_role>Eliminar</btn_delete_role>
+		</roles>
+		<multimedias>
+			<related_images>Imágenes asociadas</related_images>
+			<crop_image>Recortar imagen</crop_image>
+			<related_audios>Audios asociados</related_audios>
+			<related_docs>Documentos asociados</related_docs>
+		</multimedias>
+		<relations>
+			<article>
+				<title>Notas asociadas</title>
+			</article>
+			<clip>
+				<title>Clips de video asociados</title>
+			</clip>
+			<feedreader>
+				<title>Otros blogs asociados</title>
+			</feedreader>
+		</relations>
+		<metadata>
+			<meta_title>Meta Title</meta_title>
+			<meta_description>Descripción (200 máx)</meta_description>
+		</metadata>
+		<status>Estado:</status>
+		<geolocation>
+			<title>Geolocalización</title>
+			<longitud>Longitud</longitud>
+			<latitud>Latitud</latitud>
+			<find_in_map>Ubicar en mapa</find_in_map>
+			<btn_find>Ubicar</btn_find>
+			<geo_placeholder>Dirección, provincia, país</geo_placeholder>
+		</geolocation>
+	</item_editor>
+	<collection>
+		<created_by>Creado por</created_by>
+		<edited_by>Editado por</edited_by>
+		<published_by>Publicado por</published_by>
+		<btn_publish>Publicar</btn_publish>
+		<btn_unpublish>Despublicar</btn_unpublish>
+		<btn_edit>Editar</btn_edit>
+		<btn_delete>Eliminar item</btn_delete>
+		<btn_popout>Ver en el sitio</btn_popout>
+		<btn_preview>Vista previa</btn_preview>
+		<btn_download>Descargar</btn_download>
+		<select_items>Todos</select_items>
+		<selected_label>Seleccionados: </selected_label>
+		<selected_setCategory>Categorizar</selected_setCategory>
+		<delete_selected>Eliminar</delete_selected>
+		<delete_category>Eliminar Categoría</delete_category>
+		<no_title>Sin Título</no_title>
+		<no_weight>Peso no disponible</no_weight>
+		<playtime>Duración</playtime>
+		<type>Tipo</type>
+		<weight>Peso</weight>
+		<no_summary>Sin descripción</no_summary>
+		<messages>
+			<publish>Estas seguro que deseas publicar el elemento?</publish>
+			<unpublish>Estas seguro que deseas despublicar el elemento?</unpublish>
+			<delete_element>Estas seguro que deseas eliminar el contenido? Esta acción no se puede deshacer!</delete_element>
+			<empty_selection>No hay elementos seleccionados.</empty_selection>
+			<delete_group>Estas seguro que deseas eliminar los elementos seleccionados? Esta acción no se puede deshacer.</delete_group>
+			<delete_selected_element>Estas seguro que deseas eliminar el elemento?</delete_selected_element>
+			<autosave>Hay una version auto-guardada, desea volver a esa versión?</autosave>
+		</messages>
+	</collection>
+	<pagination>
+		<total_showing> a </total_showing>
+		<total> de </total>
+	</pagination>
+	<filters>
+		<tab>Filtrar</tab>
+		<open_filters>Abrir filtros (key F)</open_filters>
+		<title>Filtros</title>
+		<title_state>Estado</title_state>
+		<title_date>Rango de fechas</title_date>
+		<title_date_from>Desde</title_date_from>
+		<title_date_to>Hasta</title_date_to>
+		<title_order>Orden</title_order>
+		<title_order_by>Ordenar por</title_order_by>
+		<title_display>Mostrar</title_display>
+		<title_categories>Categorías</title_categories>
+		<btn_apply>Aplicar</btn_apply>
+		<state>
+			<no_filter>Sin filtro</no_filter>
+			<new>Nuevo / Despublicado</new>
+			<published>Publicado</published>
+			<modified>Modificado después de publicar</modified>
+			<deferred_publication>Esperando Publicación Diferida</deferred_publication>
+		</state>
+		<order_by>
+			<created_at>Fecha creación</created_at>
+			<updated_at>Fecha modificación</updated_at>
+			<object_id>Item ID</object_id>
+			<object_title>Título</object_title>
+			<descending>Desc.</descending>
+			<ascending>Asc.</ascending>
+		</order_by>
+	</filters>
+	<timeago>
+		<prefixAgo>hace</prefixAgo>
+		<prefixFromNow>dentro de</prefixFromNow>
+		<suffixAgo></suffixAgo>
+		<suffixFromNow></suffixFromNow>
+		<seconds>menos de un minuto</seconds>
+		<minute>un minuto</minute>
+		<minutes>unos %d minutos</minutes>
+		<hour>una hora</hour>
+		<hours>%d horas</hours>
+		<day>un día</day>
+		<days>%d días</days>
+		<month>un mes</month>
+		<months>%d meses</months>
+		<year>un año</year>
+		<years>%d años</years>
+	</timeago>
+	<modal>
+		<relations>
+			<head_title>Relacionar contenido</head_title>
+			<btn_cancel>Cancelar</btn_cancel>
+			<btn_save>Guardar</btn_save>
+			<back_to_list>Volver al listado</back_to_list>
+			<empty_element_list>El listado seleccionado no contiene elementos.</empty_element_list>
+			<show_all>Todas</show_all>
+		</relations>
+	</modal>
+	<messages>
+		<empty_upload>No se recibieron datos.</empty_upload>
+		<showing_query_results>Mostrando resultados de la búsqueda</showing_query_results>
+		<with_category_filter>con filtros de categorías</with_category_filter>
+		<element_found>elemento encontrado</element_found>
+		<elements_found>elementos encontrados</elements_found>
+		<empty_list>
+			<nothing_found>No se encontró ningún elemento.</nothing_found>
+			<load_new>Para cargar uno nuevo apretá la letra "n" de tu teclado ó en</load_new>
+		</empty_list>
+	</messages>
+	<file_api>
+		<error_config>No se puede inicializar el upload. No se encontró la configuración de los tipos de archivos aceptados.</error_config>
+		<max_size>Peso máximo permitido por configuración de servidor:</max_size>
+		<max_size_exceeded>El archivo supera el peso máximo permitido por el servidor.</max_size_exceeded>
+		<select_files>Seleccionar archivos</select_files>
+		<drag_files>(o arrastre los archivos a esta pantalla)</drag_files>
+		<drop_files>Soltar archivos</drop_files>
+	</file_api>
+	<error>
+		<xml_parsing>Error parsing xml file. %s at line %s: %s</xml_parsing>
+		<error_found>El sistema ha encontrado un problema del cual no pudo recuperarse</error_found>
+	</error>
+	<backend_messages>
+		<encrypthash_not_found>No se encontró el EncryptHash en la configuración del sistema.</encrypthash_not_found>
+		<encrypthash_wrong_length>Encrypthash length is not 48.</encrypthash_wrong_length>
+		<error>
+			<general_message>Se ha producido un error.</general_message>
+		</error>
+		<query_too_short>El texto para la búsqueda es muy corto.</query_too_short>
+		<delete_home_instance>El elemento "%s" no se puede eliminar.
+		Se encontró una instancia activa en la home titulada: "%s".
+		Para eliminarlo, es necesario eliminar las instancias de home.</delete_home_instance>
+		<list_not_found>Error: No se recibió un listado de elementos.</list_not_found>
+		<collection_module_not_available>No se recibió el módulo para el listado</collection_module_not_available>
+	</backend_messages>
+</language>

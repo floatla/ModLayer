@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mod_language>
+	<navigation>
+		<title_nav>Menú</title_nav>
+		<title_1>Listar</title_1>
+	</navigation>
+	<collection>
+		<btn_add>Agregar Submenú</btn_add>
+		<btn_edit>Editar</btn_edit>
+		<btn_delete>Eliminar</btn_delete>
+	</collection>
+	<messages>
+		<!-- <element_found>imagen encontrada</element_found> -->
+		<!-- <elements_found>imágenes encontradas</elements_found> -->
+		<empty_list>
+			<nothing_found>No hay ningún item cargado.</nothing_found>
+			<load_new>Crear Nuevo</load_new>
+		</empty_list>
+		<confirm_delete>Estas seguro que deseas eliminar el item seleccionado? Si tiene submenus tambien serán eliminados. Esta acción no se puede deshacer.</confirm_delete>
+	</messages>
+	<modal>
+		<!-- <head_title>Relaciones</head_title> -->
+		<head_title_add>Agregar Submenú</head_title_add>
+		<head_title_edit>Editar Item de Navegación</head_title_edit>
+		<menu_title>Título Item</menu_title>
+		<menu_title_placeholder>Título del ítem</menu_title_placeholder>
+		<menu_url>URL</menu_url>
+		<menu_url_placeholder>/url-to/</menu_url_placeholder>
+		<btn_save>Guardar</btn_save>
+		<btn_cancel>Cancelar</btn_cancel>
+	</modal>
+	<backend_message> 
+		<delete_item>Estas seguro que deseas eliminar el item seleccionado? Si tiene submenus tambien serán eliminados. Esta acción no se puede deshacer.</delete_item>
+	</backend_message>
+</mod_language>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mod_language>
+	<navigation>
+		<title_nav>Clips</title_nav>
+		<title_1>Listar</title_1>
+		<title_2>Nuevo clip</title_2>
+		<title_3>YouTube</title_3>
+	</navigation>
+	<collection>
+		<delete_selected>Eliminar Seleccionados</delete_selected>
+		<btn_delete>Eliminar Clip</btn_delete>
+	</collection>
+	<item_editor>
+		<page_title>Editar</page_title>
+		<btn_cancel>Cancelar</btn_cancel>
+		<btn_back>Guardar y volver</btn_back>
+		<btn_save>Guardar</btn_save>
+		<btn_delete>Eliminar este clip</btn_delete>
+		<label_delete>Eliminar clip</label_delete>
+		<labels>
+			<clip_title>Título</clip_title>
+			<youtube_url>YouTube URL</youtube_url>
+			<clip_summary>Bajada</clip_summary>
+			<clip_keywords>Palabras Clave</clip_keywords>
+			<btn_preview>Vista previa</btn_preview>
+		</labels>
+		<element_parent>
+			<person>Este Clip es de la persona</person>
+			<feedreader>Este Clip es del blog</feedreader>
+		</element_parent>
+		<multimedias>
+			<image>
+				<title>Imágenes</title>
+				<missing_epigraph>Sin epígrafe</missing_epigraph>
+			</image>
+			<video>
+				<title>Videos</title>
+				<no_summary>Sin descripción</no_summary>
+			</video>
+			<audio>
+				<playtime>Duración: </playtime>
+				<type>Tipo: </type>
+				<weight>Peso: </weight>
+			</audio>
+		</multimedias>
+		<relations>
+			<article>
+				<title>Notas</title>
+			</article>
+		</relations>
+	</item_editor>
+	<modal>
+		<embed>
+			<head_title>Embeber Clip</head_title>
+			<insert_clips>Insertar clips al contenido</insert_clips>
+			<no_related_clips>El artículo no contiene clips relacionados.</no_related_clips>
+			<btn_add_clips>Agregar clips</btn_add_clips>
+			<btn_embed>Embeber</btn_embed>
+		</embed>
+		<preview>
+			<head_title>Clip Relacionado</head_title>
+			<title>Vista Previa</title>
+			<btn_close>Cerrar</btn_close>
+		</preview>
+	</modal>
+	<youtube>
+		<previous>Anterior</previous>
+		<next>Siguiente</next>
+		<import>Importar</import>
+		<imported>Importado</imported>
+		<importing>Importando</importing>
+		<btn_edit>Editar</btn_edit>
+		<import_clip_data>Importar datos</import_clip_data>
+	</youtube>
+</mod_language>

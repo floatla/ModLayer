@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module active="1" name="clip" title="Clips de Video" parent_name="clips" path="/modules/clip" backend_controller="ClipBackend" frontend_controller="ClipFrontend" model="ClipModel" relational="1">
+  <options>
+    <group name="navigation" label="{$language/navigation/title_nav}" order="7" group="content">
+      <option name="item" label="{$language/navigation/title_1}" url="list" access_level=""/>
+      <option name="item" label="{$language/navigation/title_2}" url="add" access_level=""/>
+      <option name="item" label="{$language/navigation/title_3}" url="youtube" access_level=""/>
+    </group>
+    <group name="settings">
+      <option name="access_level" value="all"/>
+      <!-- <option name="deferredPublication" value="true"/> -->
+    </group>
+    <group name="repository">
+      <option name="xml" value="content/xml/{$module}" />
+      <option name="json" value="content/json/{$module}" />
+    </group>
+    <group name="categories">
+      <option type="parent" value="1" label="{$language/filters/title_categories}"/>
+    </group>
+    <group name="images">
+      <option type="crop" width="620" height="348" suffix="_clip" quality="95"/>
+    </group>
+    <group name="relations">
+      <option type_id="1" name="article" label="{$language/item_editor/relations/article/title}" multimedias="1"/>
+    </group>
+    <!-- <group name="element_parent">
+      <option label="{$language/item_editor/element_parent/feedreader}" name="feedreader"/>
+    </group> -->
+    <group name="multimedias">
+      <!-- 
+			Sample: <option name="image" type_id="1" category_id="13" category_parentid="3"/>
+			@category_id : Optional (Filter multimedias by category)
+			@category_parentid : Optional (Filter multimedias by category parent)
+			 -->
+      <option name="image" type_id="1" label="{$language/item_editor/multimedias/image/title}" category_id="4"/>
+      <option name="video" type_id="2" label="{$language/item_editor/multimedias/video/title}" category_id=""/>
+    </group>
+  </options>
+  <rewrite debug="0">
+    <backend>
+      <!-- <rule
+				 match="\/{$adminPath}\/photo\/modal\/(.*)"
+				 apply="RenderRelationModal"
+				 args=""
+			/> -->
+      <!-- <rule match="\/{$adminPath}\/clip\/search(\/)?(\?page=)?([0-9]+)?" apply="RenderSearch" args="$page=$3" access_level="" redirect=""/> -->
+      <rule match="\/{$adminPath}\/clip\/youtube(\/)?(\?page=)?([0-9]+)?" apply="RenderYoutube" args="$page=$3" access_level="" redirect=""/>
+    </backend>
+    <frontend>
+      <rule match="\/clip\/ajax\/([0-9]+)" apply="FrontAjaxClip" args="id=$1"/>
+      <rule match="\/clips\/" apply="RenderList" args=""/>
+    </frontend>
+  </rewrite>
+</module>

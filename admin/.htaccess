@@ -1,0 +1,8 @@
+
+## Los pedidos del backend los manejamos por 
+## separado con otro punto de acceso
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [L]

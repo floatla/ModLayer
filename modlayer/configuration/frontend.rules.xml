@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<rewrite debug="0">
+	<frontend>
+		<rule
+			 match="\/not-found\/404(\/)?(.*)"
+			 apply="RenderNotFound"
+			 args=""
+		/>
+		<rule
+			 match="\/not-available\/500(\/)?(.*)"
+			 apply="RenderError"
+			 args=""
+		/>
+		<rule
+			 match="\/lang\/(.*)"
+			 apply="FrontSetLang"
+			 args="lang=$1"
+		/>
+
+		<!-- Images Bucket -->
+		<!-- <rule 
+			 match="^\/content\/bucket\/[0-9]+\/([0-9]+)(.[^\.]*)?\.(.[^(,|?)]+)(\?)?(.*)"
+			 apply="ProcessImage" 
+			 args="id=$1&amp;params=$2&amp;ext=$3"
+		/> -->
+		<rule 
+			 match="^\/content\/bucket\/[0-9]+\/([0-9]+)(.*)?\.(jpg|jpeg|gif|png)(\?)?(.*)"
+			 apply="ProcessImage" 
+			 args="id=$1&amp;params=$2&amp;ext=$3"
+		/>
+
+		<rule
+			 match="^\/set-desktop\/?$"
+			 apply="mobileToDesktop"
+			 args=""
+		/>
+		<rule
+			 match="^\/clear-desktop\/?$"
+			 apply="desktopToMobile"
+			 args=""
+		/>
+
+		<!-- <rule
+			 match="\/$"
+			 apply="RenderLanding"
+			 args=""
+		/> -->
+		
+	</frontend>
+</rewrite>

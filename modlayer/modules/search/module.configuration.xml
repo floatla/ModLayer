@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module active="1" name="search" path="/modules/search" frontend_controller="SearchFrontend">
+
+	<options>
+		<option name="access_level" value="administrator" />
+		<group name="modules" >
+			<option module="article" /> <!-- Por default se llama al método Search -->
+		</group>
+	</options>
+
+	<rewrite debug="0">
+		<frontend>
+			<rule
+				 match="\/buscar\/(.[^\/]*)$"
+				 apply="RenderSearch"
+				 args="%{QUERY_STRING}"
+			/>
+		</frontend>
+	</rewrite>
+</module>

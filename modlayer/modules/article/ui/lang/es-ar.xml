@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mod_language>
+	<navigation>
+		<title_nav>Notas</title_nav>
+		<title_1>Listar</title_1>
+		<title_2>Nueva nota</title_2>
+	</navigation>
+	<collection>
+		<btn_delete>Eliminar nota</btn_delete>
+	</collection>
+	<item_editor>
+		<page_title>Editar</page_title>
+		<btn_cancel>Cancelar</btn_cancel>
+		<btn_back>Guardar y volver</btn_back>
+		<btn_save>Guardar</btn_save>
+		<btn_delete>Eliminar esta nota</btn_delete>
+		<label_delete>Eliminar nota</label_delete>
+		<labels>
+			<article_title>Título</article_title>
+			<article_header>Volanta</article_header>
+			<article_summary>Bajada</article_summary>
+			<article_content>Contenido</article_content>
+			<article_tags>Temas</article_tags>
+			<tags_placeholder>Agregar tema</tags_placeholder>
+			<article_slug>Slug</article_slug>
+			<slug_placeholder>Dejar vacío para completar automáticamente</slug_placeholder>
+			<show_map>Mostrar mapa</show_map>
+			<article_date>Fecha</article_date>
+			<deferred_publication>Publicación diferida</deferred_publication>
+		</labels>
+		<title_categories>Categorías</title_categories>
+		<element_parent>
+			<feedreader>
+				<title>Esta nota pertenece a</title>
+			</feedreader>
+		</element_parent>
+		<roles>
+			<person>Personajes en esta nota</person>
+		</roles>
+
+		<multimedias>
+			<image>
+				<missing_epigraph>Sin epígrafe</missing_epigraph>
+			</image>
+			<document>
+				<no_summary>Sin descripción</no_summary>
+				<download>Descargar</download>
+				<type>Tipo: </type>
+				<weight>Peso: </weight>
+			</document>
+			<audio>
+				<playtime>Duración: </playtime>
+				<type>Tipo: </type>
+				<weight>Peso: </weight>
+			</audio>
+		</multimedias>
+		<geolocation>
+			<title>Geolocalización</title>
+			<longitud>Longitud</longitud>
+			<latitud>Latitud</latitud>
+			<find_in_map>Ubicar en mapa</find_in_map>
+			<btn_find>Ubicar</btn_find>
+			<geo_placeholder>Dirección, provincia, país</geo_placeholder>
+		</geolocation>
+		<autosave_confirm>Hay una version sin guardar de esta nota, desea volver a esa versión?</autosave_confirm>
+	</item_editor>
+	<backend_messages>
+		<publish>Estas seguro que deseas publicar el elemento?</publish>
+		<unpublish>Estas seguro que deseas despublicar el elemento?</unpublish>
+		<delete_element>Estas seguro que deseas eliminar el contenido? Esta acción no se puede deshacer!</delete_element>
+		<empty_selection>No hay elementos seleccionados.</empty_selection>
+		<delete_group>Estas seguro que deseas eliminar los elementos seleccionados? Esta acción no se puede deshacer.</delete_group>
+		<delete_selected_element>Estas seguro que deseas eliminar el elemento?</delete_selected_element>
+		<autosave>Hay una version auto-guardada, desea volver a esa versión?</autosave>
+		<publish_not_allowed>Solo editores pueden Publicar ó Despublicar notas de otros usuarios.</publish_not_allowed>
+	</backend_messages>
+</mod_language>

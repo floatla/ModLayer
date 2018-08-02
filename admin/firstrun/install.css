@@ -1,0 +1,15 @@
+/* install remains unchanged */
+
+body.install {background:#e0e0e0;}
+
+.install .single-page {max-width:800px;padding:20px;background:#fff;margin:15px auto;}
+.install .block {margin:0 0 20px 0;}
+.install .left,
+.install .right {width:45%;}
+.install .left  {}
+.install .right {}
+.install label  {display:block;padding:5px 0;}
+.install input,
+.install textarea {width:100%;margin-bottom:5px;}
+.install small {color:#999;font-size:11px;line-height:14px;}
+.install .continue {clear:both;text-align:center;}

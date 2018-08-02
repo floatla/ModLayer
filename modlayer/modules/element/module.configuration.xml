@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module active="1" backend_controller="ElementController" frontend_controller="ElementController" model="ElementModel" name="element" parent_name="elements" path="/modules/element">
+	
+	<options>
+		<group name="repository">
+			<option name="xml" value="content/xml/{$module}" />
+			<option name="json" value="content/json/{$module}" />
+		</group>
+		<group name="item-states" has_deferred_publication="true">
+			<!-- <option value="0" label="Nuevo / Despublicado" turns="1" turns_label="Publicar"/>
+			<option value="1" label="Publicado" published="1" turns="0" turns_label="Despublicar"/>
+			<option value="3" label="Modificado después de publicar" turns="1" turns_label="Publicar"/>
+			<option value="4" label="Esperando Publicación Diferida" turns="1" turns_label="Publicar"/> -->
+			<option value="0" label="{$language/filters/state/new}" turns="1" turns_label="Publicar"/>
+			<option value="1" label="{$language/filters/state/published}" published="1" turns="0" turns_label="Despublicar"/>
+			<option value="3" label="{$language/filters/state/modified}" turns="1" turns_label="Publicar"/>
+			<option value="4" label="{$language/filters/state/deferred_publication}" turns="1" turns_label="Publicar"/>
+		</group>
+	</options>
+	
+	<rewrite debug="0">
+		<backend>
+			<rule
+				 match="\/{$adminPath}\/element\/route\/([0-9]+)\/?$"
+				 apply="BackRoute"
+				 args="id=$1" 
+			/>
+		</backend>
+		<frontend>
+			<rule 
+				 match="^\/a\/([0-9]+)\/?$"
+				 apply="FrontRedirect" 
+				 args="id=$1"
+			/>
+		</frontend>
+	</rewrite>
+</module>

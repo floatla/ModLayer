@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module active="1" name="admin" path="/modules/admin" backend_controller="AdminController" model="AdminModel">
+
+	<options>
+		<group name="navigation" label="{$language/navigation/title_nav}" order="1" group="3">
+			<option name="item" label="{$language/navigation/backend_users}" url="{$adminPath}/users/" access_level="administrator"/>
+			<option name="item" label="{$language/navigation/add_user}" url="{$adminPath}/users/add/" access_level="administrator"/>
+			<option name="item" label="{$language/navigation/access_level}" url="{$adminPath}/users/levels/" access_level="administrator"/>
+			<option name="item" label="{$language/navigation/new_access_level}" url="{$adminPath}/users/levels/add" access_level="administrator"/>
+			<option name="item" label="{$language/navigation/preferences}" url="preferences/" access_level="administrator"/>
+			<option name="item" label="{$language/navigation/modules}" url="preferences/module/" access_level="administrator"/>
+			<option name="item" label="{$language/navigation/my_data}" url="user/my-data/" access_level=""/>
+		</group>
+
+		<group name="settings">
+			<option name="access_level" value="administrator,editor"/>
+		</group>
+
+		<!-- 
+			Los includes XSL son componentes externos que se agregan a las transformaciones de backend.
+			La ruta que se específica es dentro del módulo 'modlayer/modules/admin/ui'
+			El atributo always indica si se debe cargar solo con la interfaz general (always = false)
+			o para cualquier transformación (always = true) 
+		-->
+		<group name="include">
+			<option name="xsl" value="/xsl/core/components.xsl" always="true" />
+			<option name="xsl" value="/xsl/content/html.xsl" always="true" />
+			<option name="xsl" value="/xsl/core/header.xsl" always="false" />
+			<option name="xsl" value="/fileapi/FileAPI.xsl" always="true" />
+			<option name="xsl" value="/tinymce/tinymce.xsl" always="true" />
+			<option name="xsl" value="/xsl/content/collection.xsl" always="false" />
+			<option name="xsl" value="/xsl/content/item.xsl" always="false" />
+		</group>
+
+	</options>
+
+	
+	<assets>
+		<css name="backend"><adminpath/>/ui/css/backend.css</css>
+		<css><adminpath/>/ui/css/tooltipster.css</css>
+		<css><adminpath/>/ui/select2/css/select2.min.css</css>
+		<css><adminpath/>/ui/css/jquery-ui.css</css>
+		<css><adminpath/>/ui/datetime/jquery-ui-timepicker-addon.css</css>
+	</assets>
+
+	<rewrite debug="1">
+		<backend>
+			<!-- Para crear el datalog.dat -->
+			<rule match="\/{$adminPath}\/pack\/?" apply="PackUsers" args="" access_level="" redirect=""/>
+
+			<!-- Para lenguaje en mensajes de javascript (pisar niveles de acceso en 'settings') -->
+			<rule match="\/{$adminPath}\/langxml\/?" apply="LangForJS" args="" access_level="all" redirect=""/>
+
+			<!-- Sobreescribo la regla genérica -->
+			<!-- <rule match="\/{$adminPath}\/admin\/?$" apply="RenderDefault" args="" access_level="administrator" redirect="/user/my-data/"/> -->
+			<!-- <rule match="\/{$adminPath}\/admin\/edit/([0-9]+)\/?(.*)$" apply="RenderEdit" args="id=$1" access_level="administrator" redirect="/user/my-data/"/> -->
+			
+			<!-- Usuarios -->
+			<rule match="\/{$adminPath}\/users\/?(list)?\/?$" apply="RenderUsers" args="" access_level="administrator" redirect="/user/my-data/"/>
+			<rule match="\/{$adminPath}\/users\/?$" apply="RenderUsers" args="" access_level="administrator" redirect="/user/my-data/"/>
+			<rule match="\/{$adminPath}\/users\/add\/?$" apply="RenderAddUser" args="" access_level="administrator" redirect=""/>
+			<rule match="\/{$adminPath}\/users\/edit\/([0-9]+)\/?(.*)$" apply="RenderEditUser" args="id=$1" access_level="administrator" redirect="/user/my-data/"/>
+			<rule match="\/{$adminPath}\/users\/delete/([0-9]+)\/?(.*)$" apply="DeleteUser" args="id=$1" access_level="administrator" redirect="/list/"/>
+			<rule match="\/{$adminPath}\/admin\/user\/my-data\/?$" apply="RenderEditMyData" args="" access_level="" redirect=""/>
+
+			<!-- /* Niveles de usuario */ -->
+			<rule match="\/{$adminPath}\/users\/levels\/add\/?$" apply="DisplayLevelsAdd" args="" access_level="administrator" redirect="/users/levels/"/>
+			<rule match="\/{$adminPath}\/admin\/users\/levels\/edit\/([0-9]+)$" apply="RenderLevelsEdit" args="id=$1" access_level="administrator" redirect="/users/levels/"/>
+			<rule match="\/{$adminPath}\/admin\/users\/levels\/delete\/([0-9]+)$" apply="BackRemoveLevel" args="id=$1" access_level="administrator" redirect="/users/levels/"/>
+			<rule match="\/{$adminPath}\/users\/levels\/?$" apply="DisplayLevels" args="" access_level="administrator" redirect="/list/"/>
+
+
+
+			<rule match="\/{$adminPath}\/admin\/preferences\/?(\?.*)?$" apply="RenderPreferences" args="" access_level="administrator" redirect="/list/"/>
+			<rule match="\/{$adminPath}\/admin\/preferences\/module\/$" apply="RenderModulePreferences" args="name=$1" access_level="administrator" redirect="/list/"/>
+			<rule match="\/{$adminPath}\/admin\/preferences\/module\/?([a-z]+)\/?(.*)" apply="RenderModulePreferences" args="name=$1" access_level="administrator" redirect="/list/"/>
+			
+
+			<!-- Login -->
+			
+			<rule match="\/{$adminPath}\/login\/run$" apply="Login" args="" access_level="" redirect=""/>
+			<rule match="\/{$adminPath}\/login\/recover-pass\/?" apply="RenderLostPass" args="" access_level="" redirect=""/>
+			<rule match="\/{$adminPath}\/login\/pass-send$" apply="RenderSendPass" args="" access_level="" redirect=""/>
+
+			
+			<rule match="\/{$adminPath}\/login\/?(.*)" apply="RenderLogin" args="%{QUERY_STRING}" />
+			<rule match="\/{$adminPath}\/logout\/?" apply="Logout" args="" access_level="" redirect=""/>
+			
+
+			<!-- <rule
+				 match="\/{$adminPath}\/skins\/?"
+				 apply="setskin"
+				 args=""
+			/> -->
+		</backend>
+		
+	</rewrite>
+
+
+</module>

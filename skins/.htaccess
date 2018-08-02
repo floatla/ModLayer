@@ -1,0 +1,8 @@
+
+# Como solo se puede user la directiva <Location> o <Directory> en el httpd.conf
+# le incluimos esto para que nadie pueda ver nada del framework
+# Necesitamos que se puedan cargar los js, css, imgs porque sino no se cargan para el admin
+
+<FilesMatch "skinconfiguration\.xml$">
+	deny from all
+</FilesMatch>

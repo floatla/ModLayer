@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module name="multimedia" active="1" path="/modules/multimedia" backend_controller="MultimediaBackend" model="MultimediaModel">
+	<options>
+		<group name="repository">
+			<option name="target" value="content/multimedia" />
+		</group>
+	</options>
+	<rewrite debug="0">
+		<backend>
+			<!-- <rule match="\/{$adminPath}\/multimedia\/upload\/?$" apply="BackUpload" args="" access_level="" redirect=""/> -->
+			<!-- <rule match="\/{$adminPath}\/multimedia\/roles\/add?$" apply="BackRolesAdd" args="" access_level="" redirect=""/> -->
+			<!-- <rule match="\/{$adminPath}\/multimedia\/roles\/?$" apply="RenderRoles" args="" access_level="" redirect=""/>
+			<rule match="\/{$adminPath}\/multimedia\/roles\/add?$" apply="BackRolesAdd" args="" access_level="" redirect=""/> -->
+		</backend>
+	</rewrite>
+</module>

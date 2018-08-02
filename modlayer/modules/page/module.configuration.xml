@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module active="1" type_id="3" name="page" title="Páginas" parent_name="pages" path="/modules/page" model="PageModel" backend_controller="PageBackend" frontend_controller="PageFrontend" relational="1">
+  <options>
+    <group name="navigation" label="{$language/navigation/title_nav}" order="10" group="content">
+      <option name="item" label="Listar" url="list" access_level=""/>
+      <option name="item" label="Agregar" url="add" access_level=""/>
+    </group>
+    <group name="settings">
+      <option name="access_level" value="administrator,editor,subeditor"/>
+    </group>
+    <group name="repository">
+      <option name="xml" value="content/xml/{$module}"/>
+      <option name="json" value="content/json/{$module}"/>
+    </group>
+    <group name="tinymce">
+      <option name="plugins" value="template"/>
+      <option name="toolbar" value="template"/>
+      <option name="css"><modpath/>/ui/css/tiny_templates.css</option>
+      <option name="extradata">
+        templates : [
+          {
+            title: "Template de prueba",
+            url: "<modpath/>/ui/xsl/template_demo1.html",
+            description: "Una descripcion del template para el editor."
+          }
+        ],
+      </option>
+    </group>
+    <group name="categories">
+      <!-- <option type="parent" value="15" label="Categorías"/> -->
+    </group>
+    <group name="relations">
+      <option name="article" label="Clips de video asociados" multimedias="1"/>
+    </group>
+    <group name="multimedias">
+      <option name="image" type_id="1" label="Imágenes asociadas" category_id=""/>
+    </group>
+  </options>
+  <rewrite debug="0">
+    <backend>
+    </backend>
+    <frontend>
+      <rule match="\/static\/(.[^\/]*)\/?$" apply="RenderItemByShortTitle" args="title=$1"/>
+      <rule match="\/page\/([0-9]+)\/(.[^&amp;]*)?(.*)$" apply="RenderItem" args="id=$1"/>
+      <rule match="\/facebook-landing\/(.*)$" apply="FrontFacebookRedirect" args=""/>
+
+      <!-- De aca para abajo depende de cada desarrollo -->
+      
+    </frontend>
+  </rewrite>
+</module>

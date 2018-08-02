@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module active="1" name="menu" path="/modules/menu" backend_controller="MenuController" model="MenuModel">
+	<options>
+		<group name="navigation" label="{$language/navigation/title_nav}" order="3" group="3">
+			<option name="item" label="{$language/navigation/title_1}" url="list/" />
+		</group>
+		<group name="settings" >
+			<option name="access_level" value="administrator" />
+		</group>
+	</options>
+
+	<rewrite>
+		<backend>
+			<rule match="\/{$adminPath}\/menu\/edit\/?" apply="BackEdit" args="" />
+			<rule match="\/{$adminPath}\/menu\/add\/?" apply="BackAdd" args="" />
+
+			<rule
+				 match="\/{$adminPath}\/menu\/ajax\/\?id=([0-9]+)"
+				 apply="BackAjaxMenu"
+				 args="id=$1" 
+			/>
+			<rule
+				 match="\/{$adminPath}\/menu\/ajax\/delete\/\?id=([0-9]+)"
+				 apply="BackAjaxDelete"
+				 args="id=$1" 
+			/>
+		</backend>
+	</rewrite>
+
+</module>

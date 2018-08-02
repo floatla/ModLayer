@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mod_language>
+	<navigation>
+		<title_nav>Categorías</title_nav>
+		<title_1>Listar</title_1>
+	</navigation>
+	<collection>
+		<btn_delete>Eliminar categoría</btn_delete>
+		<add_image>Agregar imagen</add_image>
+		<add_subcategory>Agregar subcategoría</add_subcategory>
+	</collection>
+	<item_editor>
+		<page_title>Editar categoría</page_title>
+		<add_category>Agregar categoría</add_category>
+		<labels>
+			<category_title>Título</category_title>
+			<category_description>Descripción</category_description>
+			<description_placeholder>Escriba una descripción</description_placeholder>
+		</labels>
+	</item_editor>
+	<messages>
+		<empty_upload>No se recibieron datos.</empty_upload>
+		<showing_query_results>Mostrando resultados para la búsqueda</showing_query_results>
+		<element_found>categoría encontrada</element_found>
+		<elements_found>categorías encontradas</elements_found>
+		<empty_list>
+			<nothing_found>No se encontró ninguna categoría.</nothing_found>
+			<load_new>Para cargar una nueva apretá la letra "n" de tu teclado ó en</load_new>
+		</empty_list>
+		<delete>Estas seguro que deseas eliminar la categoría seleccionada? Si tiene subcategorías tambien serán eliminadas. Esta acción no se puede deshacer.</delete>
+	</messages>
+	<modal>
+		<add_category_header>Agregar Subcategoría</add_category_header>
+		<edit_category_header>Editar Categoría</edit_category_header>
+		<title>Título</title>
+		<title_placeholder>Título</title_placeholder>
+		<description>Descripción</description>
+		<description_placeholder>Escriba una descripción</description_placeholder>
+	</modal>
+</mod_language>

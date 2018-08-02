@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language>
+	<system_wide>
+		<created_by_system>System</created_by_system>
+		<search>Search this module</search>
+		<btn_search>Search</btn_search>
+		<user_profile>My Profile</user_profile>
+		<user_drafts>Drafts</user_drafts>
+		<logout>Logout</logout>
+		<ok>Ok</ok>
+		<method_not_implemented>Method %s not implemented on module: %s</method_not_implemented> 
+	</system_wide>
+	<login>
+		<label_user>Username</label_user>
+		<label_pass>Password</label_pass>
+	</login>
+	<model_exceptions>
+		<missing_table>table %s does not exists on database</missing_table>
+		<missing_field>field %s does not exists on database</missing_field>
+		<invalid_field>Modelo de datos: El campo %s no es válido. Se esperaba un %s</invalid_field>
+	</model_exceptions>
+
+	<item_editor>
+		<page_title>Editar</page_title>
+		<btn_cancel>Cancelar</btn_cancel>
+		<btn_back>Guardar y volver</btn_back>
+		<btn_save>Guardar</btn_save>
+		<btn_delete>Eliminar</btn_delete>
+		<label_delete>Eliminar</label_delete>
+		<btn_add>Agregar</btn_add>
+		<btn_list>Listar</btn_list>
+		<unlink>Borrar Relación</unlink>
+		<unlink_parent_child>Eliminar vínculo padre &lt; hijo</unlink_parent_child>
+		<auto_import>Importación automática</auto_import>
+		<alert_no_relation>Sin</alert_no_relation>
+		<labels>
+			<radio_yes>Si</radio_yes>
+			<radio_no>No</radio_no>
+		</labels>
+		<element_parent>
+			<label_empty>No hay ninguna relación.</label_empty>
+		</element_parent>
+		<roles>
+			<person>Personas con Roles</person>
+			<delete_role>Eliminar Rol</delete_role>
+			<btn_delete_role>Eliminar</btn_delete_role>
+		</roles>
+		<multimedias>
+			<related_images>Imágenes asociadas</related_images>
+			<crop_image>Recortar imagen</crop_image>
+			<related_audios>Audios asociados</related_audios>
+			<related_docs>Documentos asociados</related_docs>
+		</multimedias>
+		<relations>
+			<article>
+				<title>Notas asociadas</title>
+			</article>
+			<clip>
+				<title>Clips de video asociados</title>
+			</clip>
+			<feedreader>
+				<title>Otros blogs asociados</title>
+			</feedreader>
+		</relations>
+		<metadata>
+			<meta_title>Meta Title</meta_title>
+			<meta_description>Descripción (200 máx)</meta_description>
+		</metadata>
+		<status>Estado:</status>
+		<geolocation>
+			<title>Geolocalización</title>
+			<longitud>Longitud</longitud>
+			<latitud>Latitud</latitud>
+			<find_in_map>Ubicar en mapa</find_in_map>
+			<btn_find>Ubicar</btn_find>
+			<geo_placeholder>Dirección, provincia, país</geo_placeholder>
+		</geolocation>
+	</item_editor>
+	<collection>
+		<created_by>Created by</created_by>
+		<edited_by>Edited by</edited_by>
+		<published_by>Published by</published_by>
+		<btn_publish>Publish</btn_publish>
+		<btn_unpublish>Unpublish</btn_unpublish>
+		<btn_edit>Edit</btn_edit>
+		<btn_delete>Delete</btn_delete>
+		<btn_popout>Published version</btn_popout>
+		<select_items>Select All</select_items>
+		<selected_label>With selected: </selected_label>
+		<selected_setCategory>Set Category</selected_setCategory>
+		<delete_selected>Delete</delete_selected>
+		<delete_category>Delete this category</delete_category>
+	</collection>
+	<filters>
+		<tab>Filter</tab>
+		<title>Filters</title>
+		<title_state>State</title_state>
+		<title_date>Between dates</title_date>
+		<title_date_from>From date</title_date_from>
+		<title_date_to>To date</title_date_to>
+		<title_order>Order</title_order>
+		<title_order_by>Order by</title_order_by>
+		<title_display>Display</title_display>
+		<title_categories>Categories</title_categories>
+		<btn_apply>Apply</btn_apply>
+		<state>
+			<no_filter>Sin filtro</no_filter>
+			<new>Nuevo / Despublicado</new>
+			<published>Published</published>
+			<modified>Modified</modified>
+			<deferred_publication>Awaiting publication</deferred_publication>
+		</state>
+		<order_by>
+			<created_at>Fecha creación</created_at>
+			<updated_at>Fecha modificación</updated_at>
+			<object_id>Item ID</object_id>
+			<object_title>Título</object_title>
+			<descending>Desc.</descending>
+			<ascending>Asc.</ascending>
+		</order_by>
+	</filters>
+	<timeago>
+		<prefixAgo></prefixAgo>
+		<prefixFromNow></prefixFromNow>
+		<suffixAgo>ago</suffixAgo>
+		<suffixFromNow>from now</suffixFromNow>
+		<seconds>less than a minute</seconds>
+		<minute>a minute</minute>
+		<minutes>%d minutes</minutes>
+		<hour>one hour</hour>
+		<hours>%d hours</hours>
+		<day>a day</day>
+		<days>%d days</days>
+		<month>one month</month>
+		<months>%d months</months>
+		<year>one year</year>
+		<years>%d años</years>
+	</timeago>
+	<messages>
+		<empty_upload>No se recibieron datos.</empty_upload>
+	</messages>
+	<error>
+		<xml_parsing>Error parsing xml file. %s at line %s: %s</xml_parsing>
+		<error_found>El sistema ha encontrado un problema del cual no pudo recuperarse</error_found>
+	</error>
+</language>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mod_language>
+	<navigation>
+		<title_nav>Páginas</title_nav>
+		<title_1>Listar</title_1>
+		<title_2>Nueva página</title_2>
+	</navigation>
+	<collection>
+		<btn_delete>Eliminar página</btn_delete>
+	</collection>
+	<item_editor>
+		<btn_delete>Eliminar esta página</btn_delete>
+		<label_delete>Eliminar página</label_delete>
+		<labels>
+			<page_title>Título</page_title>
+			<page_url>URL</page_url>
+			<page_url_placeholder>/url-de-la-pagina/ o /[a-zA-Z]+/?$ (expresión regular)</page_url_placeholder>
+			<page_content>Contenido</page_content>
+			<page_tags>Tags (separados por coma, solo para búsquedas)</page_tags>
+			<tags_placeholder>Ej: locales,deportes,belleza</tags_placeholder>
+		</labels>
+	</item_editor>
+	<messages>
+		<element_found>página encontrada</element_found>
+		<elements_found>páginas encontradas</elements_found>
+		<empty_list>
+			<nothing_found>No se encontró ninguna página.</nothing_found>
+			<load_new>Para cargar una nueva página apretá la letra "n" de tu teclado ó en</load_new>
+		</empty_list>
+	</messages>
+	<backend_messages>
+		<publish>Estas seguro que deseas publicar el elemento?</publish>
+		<unpublish>Estas seguro que deseas despublicar el elemento?</unpublish>
+		<delete_element>Estas seguro que deseas eliminar el contenido? Esta acción no se puede deshacer!</delete_element>
+		<empty_selection>No hay elementos seleccionados.</empty_selection>
+		<delete_group>Estas seguro que deseas eliminar los elementos seleccionados? Esta acción no se puede deshacer.</delete_group>
+		<delete_selected_element>Estas seguro que deseas eliminar el elemento?</delete_selected_element>
+	</backend_messages>
+</mod_language>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mod_language>
+	<navigation>
+		<title_nav>Backend</title_nav>
+		<title_1>Listar</title_1>
+		<title_2>Agregar</title_2>
+		<backend_users>Usuarios backend</backend_users>
+		<add_user>Nuevo usuario</add_user>
+		<access_level>Niveles de acceso</access_level>
+		<new_access_level>Nuevo nivel de acceso</new_access_level>
+		<preferences>Preferencias</preferences>
+		<modules>Módulos</modules>
+		<my_data>Mis datos</my_data>
+	</navigation>
+	<modules>
+		<main_header>Configuración módulos</main_header>
+		<active_modules>Estos son los módulos activos en el sistema</active_modules>
+		<module_edit>
+			<header>Configuración módulo</header>
+			<btn_back>Volver</btn_back>
+			<btn_save>Guardar</btn_save>
+			<btn_delete>Eliminar</btn_delete>
+			<btn_add>Agregar</btn_add>
+			<label>Label</label>
+			<category_label>Categoría</category_label>
+			<module_label>Módulo</module_label>
+			<multimedias_label>Traer multimedias</multimedias_label>
+			<type_id_label>Tipo ID</type_id_label>
+			<accepted_types_label>Tipos (separados por ";")</accepted_types_label>
+			<value_label>Value</value_label>
+			<access_select_all>Todos</access_select_all>
+			<nav_header>Navegación backend</nav_header>
+			<nav_description>Lo que se muestra en la navegación vertical izquierda. El orden indica la posición del item, en caso de haber dos items con la misma posición se ordenarán alfabeticamente. El grupo puede ser alguno de estos 3: 1. content, 2. multimedia que se mostrará en la navegación lateral ó 3. administration que se mostrará en el desplegable superior derecho.</nav_description>
+			<subnav_header>Subnav</subnav_header>
+			<subnav_description>Lo que se muestra en la subnavegación de cada módulo. El parámetro @url puede ser una url de backend (configurar debidamente) o los parámetros de módulo y método a pasar por GET</subnav_description>
+			<variables_header>Variables</variables_header>
+			<variables_description>Las variables del módulo sirven para agregar valores en la configuración que solo son utilizados por este módulo. El @access_level indica que usuarios tienen acceso a este módulo pero no es obligatorio. En caso no estar presente cualquier usuario tendrá acceso.</variables_description>
+			<categories_header>Categorías</categories_header>
+			<categories_description_1>Seleccione la/s categoría/s que se utilizarán con este módulo. Si deseas administrar las categorías, debes ir</categories_description_1>
+			<categories_description_2>al módulo de categorías</categories_description_2>
+			<type>Tipo</type>
+			<relations_header>Relaciones</relations_header>
+			<multimedias_header>Multimedias</multimedias_header>
+			<multimedias_yes>Si</multimedias_yes>
+			<multimedias_no>No</multimedias_no>
+			<category_select_none>Ninguna</category_select_none>
+			<accepted_files_header>Formatos aceptados</accepted_files_header>
+			<folders_header>Directorios</folders_header>
+			<rewrite_rules_header>Reglas de rewrite</rewrite_rules_header>
+			<backend_rules_header>Rewrite backend</backend_rules_header>
+			<frontend_rules_header>Rewrite frontend</frontend_rules_header>
+		</module_edit>
+		<preferences>
+			<general_configuration>Configuración general</general_configuration>
+			<system_configuration>Configuración del sistema</system_configuration>
+			<btn_save>Guardar</btn_save>
+			<debug_xml>Debug XML</debug_xml>
+			<radio_yes>Si</radio_yes>
+			<radio_no>No</radio_no>
+			<backend_label>Backend</backend_label>
+			<frontend_label>Frontend</frontend_label>
+			<error_reporting>Reporte de errores</error_reporting>
+			<display_on_screen>Mostrar en pantalla</display_on_screen>
+			<send_by_mail>Enviar por E-mail</send_by_mail>
+			<recipients>Destinatarios</recipients>
+			<recipients_small>(separados por coma sin espacios)</recipients_small>
+			<sender>Remitente</sender>
+			<sender_name>Nombre Remitente</sender_name>
+			<subdirectory>Subdirectorio</subdirectory>
+		</preferences>
+		<backend_messages>
+			<changes_saved>Los cambios fueron guardados correctamente.</changes_saved>
+		</backend_messages>
+	</modules>
+	<user>
+		<levels>
+			<add>
+				<btn_save>Guardar</btn_save>
+				<btn_cancel>Cancelar</btn_cancel>
+				<new_access_level>Nuevo nivel de acceso</new_access_level>
+				<name>Nombre</name>
+			</add>
+			<list>
+				<btn_edit>Editar</btn_edit>
+				<btn_delete>Eliminar</btn_delete>
+				<level>Jerarquía</level>
+			</list>
+		</levels>
+		<add>
+			<btn_save>Guardar</btn_save>
+			<btn_cancel>Cancelar</btn_cancel>
+			<new_user>Agregar nuevo usuario</new_user>
+			<access_level>Nivel de acceso</access_level>
+			<username>Username (solo minúsculas - sin espacios)</username>
+			<name>Nombre</name>
+			<lastname>Apellido</lastname>
+			<email>E-mail (requerido)</email>
+			<password>Contraseña</password>
+			<repeat_password>Repetir contraseña</repeat_password>
+		</add>
+		<edit>
+			<head_title>Editar usuario</head_title>
+			<btn_back_save>Guardar y volver</btn_back_save>
+			<btn_back_no_save>Volver sin guardar</btn_back_no_save>
+			<btn_save>Guardar</btn_save>
+			<send_by_email>Enviar los datos a mi cuenta de e-mail.</send_by_email>
+			<btn_send>Enviar</btn_send>
+			<access_level_label>Nivel de acceso</access_level_label>
+			<username>Username (requerido)</username>
+			<name>Nombre</name>
+			<lastname>Apellido</lastname>
+			<email>E-mail (requerido)</email>
+			<old_password>Contraseña actual (requerido para realizar cualquier modificación)</old_password>
+			<new_password>Nueva contraseña (para no modificar la contraseña dejar este campo en blanco)</new_password>
+			<repeat_new_password>Repetir nueva contraseña (para no modificar la contraseña dejar este campo en blanco)</repeat_new_password>
+		</edit>
+		<list>
+			<messages>
+				<showing_query_results>Mostrando resultados de la búsqueda</showing_query_results>
+				<element_found>usuario encontrado</element_found>
+				<elements_found>usuarios encontrados</elements_found>
+			</messages>
+			<btn_edit>Editar</btn_edit>
+			<btn_delete>Eliminar</btn_delete>
+			<no_previous_logins>Nunca ingresó al sistema.</no_previous_logins>
+			<last_login>Último ingreso</last_login>
+			<access_level>Nivel de acceso</access_level>
+		</list>
+		<email>
+			<subject>Tu usuario de</subject>
+			<head_title>Detalles de la cuenta</head_title>
+			<greeting>Hola</greeting>
+			<access_info_intro>Estos son los datos de acceso al sistema de</access_info_intro>
+			<username>Usuario</username>
+			<password>Contraseña</password>
+			<login_at>Para acceder ingresá en</login_at>
+		</email>
+		<profile>
+			<head_title>Mis Datos</head_title>
+			<btn_back_save>Guardar y volver</btn_back_save>
+			<btn_back_no_save>Volver sin guardar</btn_back_no_save>
+			<btn_save>Guardar</btn_save>
+			<send_by_email>Enviar los datos a mi cuenta de e-mail.</send_by_email>
+			<btn_send>Enviar</btn_send>
+			<access_level_label>Nivel de acceso</access_level_label>
+			<username>Username (requerido)</username>
+			<name>Nombre</name>
+			<lastname>Apellido</lastname>
+			<email>E-mail (requerido)</email>
+			<old_password>Contraseña actual (requerido para realizar cualquier modificación)</old_password>
+			<new_password>Nueva contraseña (para no modificar la contraseña dejar este campo en blanco)</new_password>
+			<repeat_new_password>Repetir nueva contraseña (para no modificar la contraseña dejar este campo en blanco)</repeat_new_password>
+		</profile>
+		<backend_messages>
+			<login_error>La combinación usuario / clave no es correcta.</login_error>
+			<edit_user_id>Error: El id de usuario recibido es no corresponde a tu usuario.</edit_user_id>
+			<edit_success>Los cambios se realizaron con éxito.</edit_success>
+			<email_taken>Error: El E-mail "%s" ya se encuentra en nuestros registros.</email_taken>
+			<email_not_valid>Error: El E-mail "%s" no es válido.</email_not_valid>
+			<newpass_mismatch>Las contraseñas no coinciden</newpass_mismatch>
+			<newpass_length>La contraseña debe tener al menos %s caracteres.</newpass_length>
+			<pass_mismatch>Error: La contraseña original no es correcta.</pass_mismatch>
+			<username_taken>El usuario "%s" ya existe en nuestros registros.</username_taken>
+			<username_restricted>Error: El nombre de usuario está restringido por el sistema.</username_restricted>
+			<send_info>
+				<sending>Enviando...</sending>
+				<success>Los datos han sido enviados.</success>
+			</send_info>
+			<delete_user>Estas seguro que deseas eliminar el usuario?</delete_user>
+		</backend_messages>
+	</user>
+</mod_language>

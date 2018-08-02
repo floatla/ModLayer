@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<module name="cache" active="1" path="/modules/cache" backend_controller="CacheBackend">
+
+	<options>
+		<group name="navigation" label="Cache" group="3" order="2">
+			<option name="item" label="Listar" url="list" access_level="administrator" />
+		</group>
+
+		<group name="settings">
+			<option name="access_level" value="all" />
+		</group>
+		<group name="repository">
+			<option name="target" value="content/cache" />
+		</group>
+	</options>
+
+	<rewrite debug="0">
+		<backend>
+			<rule
+				 match="\/{$adminPath}\/cache\/list\/([a-z]+)\/?$"
+				 apply="RenderDefault"
+				 args="filter=$1"
+				 access_level="administrator,editor,redactor"
+				 redirect="/list/"
+			/>
+		</backend>
+	</rewrite>
+
+</module>

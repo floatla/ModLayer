@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<applicationID>Your App Name</applicationID>
+	<smtp>
+		<smtp_host>smtp.sendgrid.net</smtp_host>
+		<smtp_port>587</smtp_port>
+		<smtp_user>apikey</smtp_user>
+        <smtp_pass><!-- Get you own apikey --></smtp_pass>
+
+        <!-- Local SMTP server example (no user/pass) -->
+        <!-- 
+        	<smtp_host>tcp://127.0.0.1</smtp_host>
+        	<smtp_port>25</smtp_port>
+		-->
+	</smtp>
+
+	<!-- 
+		The app uses <release> for versioning files 
+		MUST start with a 'v'
+	-->
+	<release>v20180725</release>
+	
+	<!-- 
+		Domain for this enviroment
+		Use @subdir if de app is running within the root directory of other website, type the complete path.
+		IMPORTANT: first slash '/' is required.
+		example:
+		<domain subdir="/somedir/mymodlayerapp">http://www.anotherwebsite.com</domain>	 
+	-->
+	<domain>http://local.modlayer</domain>
+
+	<!-- 
+		Domain for app static files.  
+		If you want to use a CDN, point this to your service domain
+	-->
+	<assets_domain>http://local.modlayer</assets_domain>
+
+	<!-- 
+		Domain for content generated files 
+		If you want to use a CDN, point this to your service domain
+	-->
+	<content_domain>http://local.modlayer</content_domain>
+
+	<!-- 
+		Images directories
+		This is used internally and you probably don't need to change it
+	-->
+	<images_dir>/content/images</images_dir>
+	<images_bucket>/content/bucket</images_bucket>
+
+	<!-- 
+		Debug configuration
+	-->
+	<backend_debug>1</backend_debug>
+	<frontend_debug>1</frontend_debug>
+
+	<!-- 
+	Backend directory configuration
+	this should match and existing directory
+	-->
+	<adminpath>/admin/</adminpath>
+
+	<!-- 
+	timezone will be set to date_default_timezone_set
+	to work dates in php
+	-->
+	<timezone>America/Buenos_Aires</timezone>
+
+	<!-- 
+	Database configuration
+	-->
+	<database>
+		<host>localhost</host>
+		<dbname>modlayer</dbname>
+		<user>root</user>
+		<pass>root</pass>
+		<timezone>-3:00</timezone>
+	</database>
+
+	<!-- 
+		Skins configuration tells the app where to load
+		the active skin.
+		@lang: skin language
+		@default: default skin to load when there's no language chosen by the user
+		name: Name of the skin
+		path: path to the skin from root directory
+	-->
+	<skins>
+		<skin lang="es" default="1">
+			<name>Español</name>
+			<path>/skins/full</path>
+		</skin>
+	</skins>
+
+	<!-- Autoload
+		Allows you to set content to every page inside the <context> tag
+		This configuration is used to get content from different sources:
+		<content>
+		@type: (mandatory) the type of source to be loaded 
+			Posible values:
+			1. localCall: Get content from a class running on the app
+				@class: (mandatory if @type is localCall) name of the class 
+				@method: (mandatory if @type is localCall) name of the method
+				Optional params: If the method is expecting any parameters you can add one node for each parameter.
+				<arg>: (optional) defines a parameter
+					@name: name of the parameter
+					@value: value of the parameter
+				example: 
+				<content type="localCall" class="Analytics" method="GetRanking" placeholder="ranking" xpath="null" json_decode="0">
+					<arg name="filter" value="notas" />
+				</content>
+
+			2. localFile: Get content from a physical file on the hard disk.
+				@file: (mandatory if @type is localFile) path to the file from the root directory.
+				examples:
+				<content type="localFile" file="/content/xml/test.json" placeholder="testjson" xpath="null" json_decode="1" />
+				<content type="localFile" file="/content/xml/test.xml" placeholder="testxml" xpath="null" json_decode="0" />
+
+			3. remoteFile: Get content from an external source or URL.
+				@ttl: (mandatory if @type is remoteFile) Time To Live. When using this type, the app will store the response from the URL on static a file
+				and will serve the content from there until it expires.
+				<remote>: (mandatory if @type is remoteFile) External URL to get the file.
+					@write: (mandatory inside <remote> if @type is remoteFile) Path to the file to be created and saved.
+				example:
+				<content type="remoteFile" placeholder="weather" xpath="null" ttl="3600" json_decode="0">
+					<remote write="/content/xml/weather.xml">http://api.wunderground.com/api/09a4ea1s0gtad569/conditions/lang:SP/q/Argentina.xml</remote>
+				</content>
+
+		@placeholder: (mandatory) name of the node to be placed inside <context> with the content. 
+		@xpath: (mandatory) if the content is a xml YOU MUST specify the xpath to the node you want to add
+			Default value: null
+		@json_decode: (mandatory) if the content is a json object you should use this flag to use json_decode() when reading the content.
+			Posible values: 0 (default value) or 1 
+	-->
+	<autoload>
+		<content type="localCall" class="Menu" method="FetchTree" placeholder="menu-navtop" xpath="null" json_decode="0">
+			<arg name="parent_id" value="2"/>
+		</content>
+
+		<!-- Paths de Imágenes -->
+        <content type="localFile" file="/modlayer/modules/image/module.configuration.xml" placeholder="image_dir" xpath="/module/options/group[@name='repository']/*" json_decode="0"/>
+		<!-- Paths de Audios -->
+        <content type="localFile" file="/modlayer/modules/audio/module.configuration.xml" placeholder="audio_dir" xpath="/module/options/group[@name='repository']/*" json_decode="0"/>
+        <!-- Paths de Videos -->
+        <content type="localFile" file="/modlayer/modules/video/module.configuration.xml" placeholder="video_dir" xpath="/module/options/group[@name='repository']/*" json_decode="0"/>
+
+	</autoload>
+
+	<!-- Error Reporting
+		Configure how you want errors to be handled.
+		1. <screen> Show errors on screen. Good for development
+			@enabled: true or false
+		2. <email> Send error via email. Good for production environment.
+			@enabled: true or false
+			@destination: recipient email. You can specify more than one address separated by commas.
+			@sender: email address from where it's being sent
+			@sendername: description to be filled in the name field.
+	-->
+	<errorReporting>
+		<screen enabled="true"/>
+		<email enabled="false" destination="youremail@domain.com" sender="noreply@modlayer.org" sendername="Your App Name"/>
+	</errorReporting>
+
+	<!-- Global Rewrite
+		This configuration shouldn't be changed.
+		It tells the app where to load general rewrite rules for backend and frontend separately.
+		Rewrite rules defined in modules will be considered on top of (will overwrite) those described in these files
+	-->
+	<backendrules>configuration/backend.rules.xml</backendrules>
+	<frontendrules>configuration/frontend.rules.xml</frontendrules>
+
+	<!-- Initial configuration -->
+	<accessLevel defaultModule="article">
+		<user rol="administrator" weight="1" defaultModule="article"/>
+		<user rol="editor" weight="2" defaultModule="article"/>
+		<user rol="redactor" weight="3" defaultModule="article"/>
+	</accessLevel>
+	
+	<!-- Devices
+		
+		Keep default desktop node first.
+	-->
+	<devices>
+        <!-- Desktop -->
+        <device name="desktop" directory="desktop" default="1"/>
+
+        <!-- Tablets -->
+        <device name="ipad" directory="desktop"/>
+        <device name="galaxy" directory="desktop"/>
+
+        <!-- Cellphones -->
+        <device name="iphone" directory="mobile"/>
+        <device name="blackberry" directory="mobile"/>
+        <device name="android" directory="mobile"/>
+        <device name="opera" directory="mobile"/>
+        <device name="windows" directory="mobile"/>
+        <device name="generic" directory="mobile"/>
+    </devices>
+
+	<security>
+        <!-- 
+            encrypthash: numeric, length 48 
+            CREATE YOUS! 
+        -->
+        <encrypthash>000000000000000000000000000000000000000000000001</encrypthash> 
+        <!--
+            datakey: numeric, length 24  
+            CREATE YOUS! 
+        -->
+        <datakey>AAAAAAA@aaaaaaaaa#bbbbbb</datakey>
+        <!-- 
+            initialization vector for encryption: length 16 
+            CREATE YOUS! 
+         -->
+        <iv>0000*111@222#333</iv>
+    </security>
+</configuration>

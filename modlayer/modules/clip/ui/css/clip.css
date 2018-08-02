@@ -1,0 +1,71 @@
+.clip-list {padding:15px 0 0;}
+.clip-list li {
+	border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    float: left;
+    margin: 0 10px 10px 0;
+    overflow: hidden;
+    padding: 0 15px 0;
+    position: relative;
+    width: 240px;
+    min-height: 230px;
+}
+.clip-list li .frame {
+	background: #f0f0f0 none repeat scroll 0 0;
+    display: block;
+    margin: 0 -15px 15px;
+    text-align: center;
+    width: auto;
+    height:135px;
+}
+.no-pic {height:135px;margin-top:0;}
+
+.clip-list li h3 {
+	font-family: 'source_sans_proregular',
+	arial,sans-serif;
+	font-size:15px;
+	line-height:18px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	margin:0 0 15px 0;
+}
+
+.clip-list li .quick {float:right;}
+.clip-list li .quick-modal {float:none;font-size:12px;color:#777;line-height:12px;text-align:center;margin:15px;}
+.clip-list li .quick span.right {float:none;}
+
+
+.video {
+	margin:15px 0 0;
+	display:block;
+	position:relative;
+	height:100%;
+}
+
+.video-js {width:100%;padding-top: 56.25%;background-color:#000;height:100%;}
+.vjs-big-play-button {display:none;}
+.vjs-default-skin .vjs-big-play-button::before,
+.vjs-default-skin .vjs-big-play-button {display:none;}
+.vjs-fullscreen {padding-top: 0px}
+
+
+.YT-Search {
+	border-top:1px solid #e0e0e0;
+	padding:15px 0;
+	text-align:center;
+	background:#f5f5f5;
+}
+.YT-Search input {
+	width:80%;
+	padding:10px;
+	height:auto;
+	border-radius:4px;
+}
+
+.ytvideos h2 {margin:0 0 10px 0;}
+.ytvideos li p {margin-bottom:15px;}
+.ytvideos .external {display:inline-block;font-size:13px;}
+
+.list-header .pagination {margin-right:0;}
+

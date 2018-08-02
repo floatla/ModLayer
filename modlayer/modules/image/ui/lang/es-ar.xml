@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mod_language>
+	<navigation>
+		<title_nav>Imágenes</title_nav>
+		<title_1>Listar</title_1>
+		<title_2>Subir imagen</title_2>
+	</navigation>
+	<collection>
+		<btn_delete>Eliminar imagen</btn_delete>
+	</collection>
+	<filters>
+		<title_categories>Categoría de Imagen</title_categories>
+	</filters>
+	<item_editor>
+		<btn_delete>Eliminar esta imagen</btn_delete>
+		<label_delete>Eliminar imagen</label_delete>
+		<labels>
+			<image_title>Título</image_title>
+			<image_epigraph>Epígrafe</image_epigraph>
+			<image_credits>Crédito</image_credits>
+			<keywords>Keywords (separados por coma)</keywords>
+			<image_tags>Tags de la imagen</image_tags>
+			<tags_placeholder>Agregar tag</tags_placeholder>
+			<image_label>Foto</image_label>
+			<title_info>Información de la imágen</title_info>
+			<who_is_using>Aparece en</who_is_using>
+			<info_upload>Subida por</info_upload>
+			<info_modified>Modificada por</info_modified>
+			<info_width>Ancho</info_width>
+			<info_height>Alto</info_height>
+			<info_weight>Peso</info_weight>
+			<label_edit>Acciones</label_edit>
+		</labels>
+		<edit_image>
+			<crop>Recortar</crop>
+			<rotate>Rotar</rotate>
+			<watermark>Marca de agua</watermark>
+		</edit_image>
+		<view_original>Ver foto original</view_original>
+	</item_editor>
+	<messages>
+		<element_found>imagen encontrada</element_found>
+		<elements_found>imágenes encontradas</elements_found>
+		<empty_list>
+			<nothing_found>No se encontró ninguna imagen.</nothing_found>
+			<load_new>Para cargar una nueva imagen apretá la letra "n" de tu teclado ó en</load_new>
+		</empty_list>
+	</messages>
+	<modal>
+		<head_title>Relaciones</head_title>
+		<crop>
+			<no_region_selected>No se seleccionó una región para realizar el corte.</no_region_selected>
+			<create_new_image>Crear Nueva Imagen</create_new_image>
+			<back>Volver</back>
+			<generate_image>Generar imagen</generate_image>
+			<select_crop_area>Seleccione el area de la imagen que quiere recortar y presione generar imagen.</select_crop_area>
+		</crop>
+		<embed>
+			<head_title>Embeber Imagen</head_title>
+			<insert_images>Insertar imágenes al contenido</insert_images>
+			<select_all>Usar todas</select_all>
+			<select>Seleccionar</select>
+			<as_gallery>Insertar como una galería</as_gallery>
+			<as_gallery_empty>La opción de insertar galería se habilita con 2 o más imagenes.</as_gallery_empty>
+			<gallery_order>Para modificar el orden de las imágenes, utilizar el ordenamiento de la caja de imágenes relacionadas</gallery_order>
+			<no_related_images>El artículo no contiene imágenes relacionadas.</no_related_images>
+			<btn_add_images>Agregar imágenes</btn_add_images>
+			<align>Alineación</align>
+			<align_left>Izquierda</align_left>
+			<align_right>Derecha</align_right>
+			<align_center>Centrada</align_center>
+			<size>Tamaño</size>
+			<size_small>Chica</size_small>
+			<size_medium>Mediana</size_medium>
+			<size_large>Al cuerpo</size_large>
+			<size_source>Original</size_source>
+			<btn_embed>Embeber</btn_embed>
+			<show_epigraph>Mostrar epígrafe</show_epigraph>
+		</embed>
+		<list>
+			<related_images>Imágenes Relacionadas</related_images>
+			<btn_upload> Subir</btn_upload>
+			<back_to_list>Volver al listado</back_to_list>
+			<results>Resultados de</results>
+			<show_all>Todas</show_all>
+			<empty_image_list>El listado seleccionado no contiene imágenes.</empty_image_list>
+		</list>
+		<upload>
+			<image_title>Título</image_title>
+			<image_epigraph>Epígrafe</image_epigraph>
+			<image_credits>Crédito</image_credits>
+			<relate_on_save>Relacionar al guardar</relate_on_save>
+		</upload>
+	</modal>
+</mod_language>

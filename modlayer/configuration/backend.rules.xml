@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+	These are generic backend rules for active modules
+ -->
+
+<rewrite debug="0">
+	<backend>
+		<rule match="\/{$adminPath}\/{$moduleName}\/?$"
+			 apply="RenderDefault"
+			 args=""
+		/>
+		<rule match="\/{$adminPath}\/{$moduleName}\/list\/?(.[^/]*)?$"
+			 apply="RenderDefault"
+			 args=""
+		/>
+		<rule match="\/{$adminPath}\/{$moduleName}\/list\/\?page=([0-9]+)$"
+			 apply="RenderDefault"
+			 args="page=$1"
+		/>
+		<rule match="\/{$adminPath}\/{$moduleName}\/list\/published\/?$"
+			 apply="RenderDefault"
+			 args="state=1"
+		/>
+		<rule match="\/{$adminPath}\/{$moduleName}\/list\/unpublished\/?$"
+			 apply="RenderDefault"
+			 args="state=0"
+		/>
+		<rule
+			 match="\/{$adminPath}\/{$moduleName}\/search(\/)(.*)?"
+			 apply="RenderDefault"
+			 args=""
+		/>
+		<rule
+			 match="\/{$adminPath}\/{$moduleName}\/category/([0-9]+)\/?(\?page=)?([0-9]+)?$"
+			 apply="RenderDefault"
+			 args="categories=$1&amp;page=$3"
+		/>
+		<rule
+			 match="\/{$adminPath}\/{$moduleName}\/edit/([0-9]+)\/?(.*)$"
+			 apply="RenderEdit"
+			 args="id=$1"
+		/>
+		<rule
+			 match="\/{$adminPath}\/{$moduleName}\/edit\/?$"
+			 apply="BackEdit"
+			 args=""
+		/>
+		<rule
+			 match="\/{$adminPath}\/{$moduleName}\/add\/?$"
+			 apply="RenderAdd"
+			 args=""
+		/>
+		<rule
+			 match="\/{$adminPath}\/{$moduleName}\/insert\/?$"
+			 apply="BackAdd"
+			 args="id=$1"
+		/>
+		<rule
+			 match="\/{$adminPath}\/{$moduleName}\/return\/?$"
+			 apply="BackReturn"
+			 args=""
+		/>
+		<rule
+			 match="\/{$adminPath}\/{$moduleName}\/preview/([0-9]+)\/?(.*)$"
+			 apply="RenderPreview"
+			 args="id=$1"
+		/>
+		<rule
+			 match="\/{$adminPath}\/{$moduleName}\/delete/([0-9]+)\/?(.*)$"
+			 apply="BackDelete"
+			 args="id=$1"
+		/>
+		<rule
+			 match="\/{$adminPath}\/{$moduleName}\/json-item/([0-9]+)\/?(.*)$"
+			 apply="BackJsonItem"
+			 args="id=$1"
+		/>
+		<rule
+			 match="\/{$adminPath}\/{$moduleName}\/share\/?$"
+			 apply="BackShare"
+			 args=""
+		/>
+	</backend>
+</rewrite>

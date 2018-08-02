@@ -1,0 +1,6 @@
+
+
+#top .search {display:none;}
+ul.cache li.nombre {width:60%;}
+ul.cache li.expira {width:30%;text-align:center;}
+ul.cache li.eliminar {width:7%;text-align:center;}

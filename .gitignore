@@ -1,0 +1,7 @@
+.DS_Store
+/modlayer/sessions
+/content/*
+!/content/not-found.gif
+!/content/not-found.jpg
+!/content/not-found.png
+/modlayer/modules/admin/datalog.dat

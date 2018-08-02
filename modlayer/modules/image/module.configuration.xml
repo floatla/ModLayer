@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module active="1" name="image" multimedia_typeid="1" parent_name="images" path="/modules/image" backend_controller="ImageBackend" model="ImageModel">
+  <options>
+    <group name="navigation" label="{$language/navigation/title_nav}" order="1" group="multimedia">
+      <option name="item" label="{$language/navigation/title_1}" url="list" access_level=""/>
+      <option name="item" label="{$language/navigation/title_2}" url="add" access_level=""/>
+    </group>
+    <group name="settings">
+      <option name="access_level" value="all"/>
+      <option name="paging" value="20"/>
+    </group>
+    <group name="categories">
+      <option type="parent" value="2" label="{$language/filters/title_categories}"/>
+    </group>
+    <group name="accept">
+      <option name="mime-type" value="image/jpg" ext="jpg"/>
+      <option name="mime-type" value="image/jpeg" ext="jpg"/>
+      <option name="mime-type" value="image/gif" ext="gif"/>
+      <option name="mime-type" value="image/png" ext="png"/>
+    </group>
+    <group name="repository">
+      <option name="target" value="content/images/source"/>
+    </group>
+    <group name="roles">
+      <option label="{$language/item_editor/roles/person}" module="person" featuring="1" featured_in="0"/>
+    </group>
+  </options>
+  <rewrite debug="0">
+    <backend>
+      <rule match="\/{$adminPath}\/image\/upload\/?(.*)" apply="Upload" args="%{QUERY_STRING}" access_level="" redirect=""/>
+      <rule match="\/{$adminPath}\/image\/bulk-update\/?(.*)" apply="BulkUpdate" args="%{QUERY_STRING}" access_level="" redirect=""/>
+      <rule match="\/{$adminPath}\/image\/modal\/(.*)" apply="DisplayCollectionModal" args="" access_level="" redirect=""/>
+      <rule match="\/{$adminPath}\/image\/crop\/([0-9]+)\/(.*)" apply="RenderCrop" args="id=$1&amp;%{QUERY_STRING}" access_level="" redirect=""/>
+      <rule match="\/{$adminPath}\/image\/crop-image\/$" apply="Crop" args="id=$1" access_level="" redirect=""/>
+      <rule match="\/{$adminPath}\/image\/rotate\/([0-9]+)\/(.*)" apply="RenderRotate" args="id=$1&amp;%{QUERY_STRING}" access_level="" redirect=""/>
+    </backend>
+  </rewrite>
+</module>

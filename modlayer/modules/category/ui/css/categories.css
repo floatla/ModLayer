@@ -1,0 +1,114 @@
+
+#top .search {display:none;}
+#mainpanel .icon {display:inline-block;margin:0 5px 0 0;}
+#grid {padding:15px 15px 0 0;}
+ol {padding:0 0 0 15px;}
+.branch {
+	padding:0;border:1px solid #e0e0e0;margin:0 -1px -1px 0;background:#f0f0f0;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+.categoryRow {
+	background:#fff;
+	/*background:#fff url('../../../admin/ui/imgs/icons/order.png') center center no-repeat;	*/
+	padding:8px;
+	width:100%;
+	color:#000;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	cursor:default;
+}
+.categoryRow:hover {background:#F0F8FC;}
+.categoryRow .quick {font-size:20px;line-height:23px;}
+.categoryRow a,
+.categoryRow a:visited {color:#545454;opacity:0.4;padding: 5px 12px 0 0;}
+.categoryRow a:hover {color:#009DF2;opacity:1;background-color:transparent;}
+.categoryRow h3 {font-size:14px;font-family:'Helvetica Neue', Helvetica, arial, sans-serif;margin:0 0 0 5px;}
+.categoryRow p  {margin:0 0 0 5px;color:#777;}
+.categoryRow small {color:#777;font-size:12px;}
+.order {float:left;margin:5px 5px 0;}
+.openclose {
+	display:block;
+	float:left;
+	width:16px;
+	height:16px;
+	margin:6px 5px 0 0;
+}
+.opened {background:url('../../../admin/ui/imgs/icons/minus.png') no-repeat;}
+.closed {background:url('../../../admin/ui/imgs/icons/plus2.png') no-repeat;}
+ul.form.categories li {border:0;}
+ul.list {border-bottom:0;}
+ul.list li.head {border:0;}
+.collapsed {display:none;}
+.expanded {display:block;}
+
+.placeholder {
+	background:#ccc;
+	border-radius:5px;
+}
+.disclose {
+	cursor: pointer;
+	width: 15px;
+	height: 15px;
+	margin:7px 7px 0 0;
+	display: none;
+	float:left;
+	background-repeat: no-repeat;
+	background-size: 10px auto;
+	background-position: center center;
+
+}
+
+.sortable .mjs-nestedSortable-collapsed > ol {
+	display: none;
+}
+
+.sortable .mjs-nestedSortable-branch .disclose {
+	display: inline-block;
+}
+
+.branch.mjs-nestedSortable-leaf .disclose {
+	background-image:none;
+	display:none;
+}
+.branch.mjs-nestedSortable-collapsed .disclose {
+	background-image:url('../../../admin/ui/imgs/icons/plus.svg');
+}
+
+.mjs-nestedSortable-expanded .disclose {
+	background-image:url('../../../admin/ui/imgs/icons/minus.svg');
+}
+
+
+/* Imagenes */
+.categoryRow .catImg {
+	float:left;
+	margin:0 15px 0 0;
+	position:relative;
+	/*border-right:16px solid #5a7582;*/
+}
+.categoryRow .catImg img {border-radius:5px;}
+.categoryRow .catImg a.remove {
+	position:absolute;
+	top:0;
+	right:0;
+	z-index:10;
+	width:16px;
+	height:16px;
+	background: #5a7582 url("../../../admin/ui/imgs/icons/close_white_14.png") no-repeat scroll center center;
+	border-radius:3px;
+}
+.categoryRow .catImg a.remove:hover {
+	background-color: #4599d9;
+}
+/* Fin Imagenes */
+
+
+.modal-categories {padding:20px 15px 0;}
+.modal-categories > ul {margin:0 0 20px 0;}
+.modal-categories ul ul {padding:0 0 0 20px;}
+.modal-categories ul ul li {padding:10px 0 0;}
+
+

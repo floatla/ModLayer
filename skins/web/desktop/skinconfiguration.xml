@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin>
+	<author>Float.la (2014)</author>
+	<description>Theme demo VND Cms</description>
+	
+	<!-- 
+		Archivos XSL para transformaciones
+
+		El atributo @always indica si el archivo debe importarse siempre, por 
+		más que no se cargue la interfaz general.
+	-->
+	<pathinfo>
+		<path baseStyleSheet="true" value="/xsl/core/layout.xsl" />
+		<path always="false" value="/xsl/core/header.xsl" />
+		<path always="false" value="/xsl/core/footer.xsl" />
+		<path always="true" value="/xsl/core/local.components.xsl" />
+
+		<path always="true" value="/xsl/lib/components.xsl" />
+		<path always="true" value="/xsl/lib/html.xsl" />
+		<path always="true" value="/xsl/lib/m.image.xsl" />
+		<path always="true" value="/xsl/lib/m.docs.xsl" />
+		<path always="true" value="/xsl/lib/m.audio.xsl" />
+		<path always="true" value="/xsl/lib/m.video.xsl" />
+		<path always="true" value="/xsl/lib/pagination.xsl" />
+		<path always="true" value="/xsl/lib/url.xsl" />
+		<path always="false" value="/xsl/lib/html.external.xsl" />
+	</pathinfo>
+
+	<header>
+		<meta name="description" content="Demo Vind CMS." />
+		<css><skinpath/>/assets/css/swiper.css</css>
+		<css><skinpath/>/assets/css/vind.css</css>
+		<css><skinpath/>/assets/css/font-awesome.min.css</css>
+		<favicon>/favicon.ico</favicon>
+	</header>
+</skin>

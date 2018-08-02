@@ -1,0 +1,33 @@
+
+.body_panel {
+	min-width:auto;
+}
+
+.body_panel header {
+	padding:10px 15px;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	z-index:10;
+	background:#fff;
+	border-bottom:1px solid #e0e0e0;
+}
+
+header h3 {margin:5px 0 0;}
+header .search {
+	float:right;
+	margin:5px 0 0;
+}
+
+
+.body_panel .list-header {border-top:1px solid #e0e0e0;}
+.list-header .pagination {float:left;margin:0 10px 0 15px;}
+.filters {float:left;}
+
+.panel-body {padding:52px 15px 15px;min-height:100%;}
+.panel-body.with-header {padding-top:104px;}
+
+
+
+

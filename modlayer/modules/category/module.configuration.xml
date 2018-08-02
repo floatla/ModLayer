@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module active="1" name="category" path="/modules/category" backend_controller="CategoryBackend" model="CategoryModel">
+	<options>
+		<group name="navigation" label="{$language/navigation/title_nav}" order="3" group="administration">
+			<option name="item" label="{$language/navigation/title_1}" url="list" access_level=""/>
+		</group>
+		
+		<group name="settings">
+			<option name="access_level" value="administrator"/>
+		</group>
+		
+	</options>
+	
+	<rewrite debug="0">
+		<backend>
+			<rule match="\/{$adminPath}\/category\/edit\/?" apply="BackEdit" args="" />
+			<rule match="\/{$adminPath}\/category\/add\/?" apply="BackAdd" args="" />
+			<rule
+				 match="\/{$adminPath}\/category\/ajax\/\?id=([0-9]+)"
+				 apply="BackAjaxCategory"
+				 args="id=$1" 
+			/>
+			<rule
+				 match="\/{$adminPath}\/category\/ajax\/delete\/\?id=([0-9]+)"
+				 apply="BackAjaxDelete"
+				 args="id=$1" 
+			/>
+			<rule
+				 match="\/{$adminPath}\/category\/autocomplete\/(.*)"
+				 apply="BackSuggestAutocomplete"
+				 args="%{QUERY_STRING}"
+			/>
+		</backend>
+	</rewrite>
+</module>
