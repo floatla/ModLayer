@@ -84,7 +84,9 @@
 
 
 	<xsl:variable name="toolbar"><!-- 
-		 -->styleselect | bold italic | removeformat | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link  fullscreen | <!-- 
+		 -->styleselect | bold italic | removeformat | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link  fullscreen <!--
+		 --><xsl:if test="$m_extradata != ''"> template</xsl:if><!-- 
+		 --> | <!-- 
 		 --><xsl:if test="$config/module/@name = 'article'"> m_assets</xsl:if><!-- 
 		 --><xsl:if test="$multimedias/option[@name='image']"> m_image</xsl:if><!-- 
 		 --><xsl:if test="$multimedias/option[@name='audio']"> m_audio</xsl:if><!-- 
