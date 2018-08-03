@@ -200,17 +200,17 @@
 	<security>
         <!-- 
             encrypthash: numeric, length 48 
-            CREATE YOUS! 
+            CREATE YOURS! 
         -->
         <encrypthash>000000000000000000000000000000000000000000000001</encrypthash> 
         <!--
-            datakey: numeric, length 24  
-            CREATE YOUS! 
+            data encription key: alphanumeric, length 24  
+            CREATE YOURS! 
         -->
         <datakey>AAAAAAA@aaaaaaaaa#bbbbbb</datakey>
         <!-- 
-            initialization vector for encryption: length 16 
-            CREATE YOUS! 
+            initialization vector for encryption: alphanumeric, length 16 
+            CREATE YOURS! 
          -->
         <iv>0000*111@222#333</iv>
     </security>
