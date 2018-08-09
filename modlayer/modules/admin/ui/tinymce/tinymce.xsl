@@ -84,9 +84,7 @@
 
 
 	<xsl:variable name="toolbar"><!-- 
-		 -->styleselect | bold italic | removeformat | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link  fullscreen <!--
-		 --><xsl:if test="$m_extradata != ''"> template</xsl:if><!-- 
-		 --> | <!-- 
+		 -->styleselect | bold italic forecolor table | removeformat | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link  fullscreen | <!-- 
 		 --><xsl:if test="$config/module/@name = 'article'"> m_assets</xsl:if><!-- 
 		 --><xsl:if test="$multimedias/option[@name='image']"> m_image</xsl:if><!-- 
 		 --><xsl:if test="$multimedias/option[@name='audio']"> m_audio</xsl:if><!-- 
@@ -149,7 +147,7 @@
 			plugins: [
 				"<xsl:if test="$m_plugins/@value"><xsl:value-of select="$m_plugins/@value"/></xsl:if> modlayer advlist autolink link lists charmap preview hr anchor",
 				"searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime nonbreaking",
-				"contextmenu directionality emoticons paste textcolor"
+				"contextmenu directionality emoticons paste textcolor table"
 			],
 			paste_as_text: true,
 			toolbar: "<xsl:value-of select="$toolbar" /> ModConf.clip",
@@ -189,6 +187,9 @@
 					{"title": "Caja de Clip (para limpiar formato)", "block": "m_clip"}
 				]}
 			],
+			table_default_attributes: {
+				class: 'inline-table'
+			},
 			language : 'es',
 			extended_valid_elements : "external[*],slideshow[item_id|type|ids],embed[*],m_poll[*],img[*],m_audio[*],m_document[*],m_clip[*],script[*],m_image[id|size|align|image_type|caption],m_gallery_embed[*],recuadro[class]",
 			custom_elements: "external,m_image,m_gallery_embed,m_document,m_clip,m_audio,m_poll,recuadro",

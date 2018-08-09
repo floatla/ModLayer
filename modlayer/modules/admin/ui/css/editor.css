@@ -129,8 +129,22 @@ m_gallery_embed img {
 	float:left;
 }
 
-
 .mce-fullscreen #navpanel {z-index:0;}
+
+.inline-table {
+	border-top:1px solid #e0e0e0;
+	border-left:1px solid #e0e0e0;
+	margin:20px 0;
+}
+.inline-table th,
+.inline-table td {
+	border-bottom:1px solid #e0e0e0;
+	border-right:1px solid #e0e0e0;
+	padding:8px;
+	font-size:15px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
 
 
 *+html .floatFix,

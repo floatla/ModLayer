@@ -693,7 +693,7 @@ class ElementController extends AdminController
 
 	/**
 	*	FrontRedirect
-	*	Toma una url en el formato /a/{id} y la redirecciona al modulo correspondiente.
+	*	Toma una url en el formato /a/{id} y la redirecciona al modulo / item correspondiente con la url completa
 	*	@return void
 	*/
 	public static function FrontRedirect()
@@ -703,8 +703,8 @@ class ElementController extends AdminController
 
 		$element = new Element();
 		$module  = $element->getmodule($id);
-		echo $module;
-		die;
+		// echo $module;
+		// die;
 		// $module  = Configuration::Query("/configuration/modules/module[@type_id = '". $type ."']")->item(0)->getAttribute('name');
 
 		$article = new $module();
@@ -713,16 +713,16 @@ class ElementController extends AdminController
 
 		if($item)
 		{
-			$xml = new DOMDocument('1.0', 'UTF-8');
+			$xml = new XMLDom();
 			$xml->load($item);
 
-			$url = $xml->getElementsByTagName('object_url');
+			$url = $xml->Query('/xml/*/slug|/xml/*/object_url');
 
-			if(!$url->item(0)){
-				Util::redirect('/not-found/404/?'.$module.'-not-valid');
-			}
+			$slug = (!$url) 
+					? Util::Sanitize($xml->Query('/xml/*/title')->item(0)->nodeValue) 
+					: $url->item(0)->nodeValue; 
 
-			$location = '/' . $module . '/'.$id.'/'.$url->item(0)->nodeValue;
+			$location = '/' . $module . '/'.$id.'/'. $slug;
 			if(!empty($get)){
 				$location .= '/?';
 				foreach ($get as $param => $value) {
@@ -736,7 +736,8 @@ class ElementController extends AdminController
 		}
 		else
 		{
-			Util::redirect('/not-found/404/?'.$module.'-not-valid');
+			Frontend::RenderNotFound();
+			// Util::redirect('/not-found/404/?'.$module.'-not-valid');
 		}	
 	}
 

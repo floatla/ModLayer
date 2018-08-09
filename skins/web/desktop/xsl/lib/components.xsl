@@ -354,12 +354,21 @@
 <xsl:template name="escape.quotes"><!--
 	--><xsl:param name="string" /><!--
 	--><xsl:choose><!--
+		Doble comilla
 		--><xsl:when test="contains($string, '&quot;')"><!--
 			--><xsl:value-of select="substring-before($string, '&quot;')" />\"<!--
 			--><xsl:call-template name="escape.quotes"><!--
 				--><xsl:with-param name="string" select="substring-after($string, '&quot;')" /><!--
 			--></xsl:call-template><!--
 		--></xsl:when><!--
+		Comilla simple
+		--><xsl:when test='contains($string, "&#x27;")'><!--
+			--><xsl:value-of select='substring-before($string, "&#x27;")' />&#xB4;<!--
+			--><xsl:call-template name="escape.quotes"><!--
+				--><xsl:with-param name="string" select='substring-after($string, "&#x27;")' /><!--
+			--></xsl:call-template><!--
+		--></xsl:when><!--
+		Tab
 		--><xsl:when test="contains($string, '&#9;')"><!--
 			--><xsl:value-of select="substring-before($string, '&#9;')" />\"<!--
 			--><xsl:call-template name="escape.quotes"><!--

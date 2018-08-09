@@ -169,6 +169,48 @@
 	<xsl:copy-of select="." />
 </xsl:template>
 
+<xsl:template match="table">
+	<table>
+		<xsl:apply-templates select="@*" mode="atts" />
+		<xsl:apply-templates />
+	</table>
+</xsl:template>
+
+<xsl:template match="tr">
+	<tr>
+		<xsl:apply-templates select="@*" mode="atts" />
+		<xsl:apply-templates />
+	</tr>
+</xsl:template>
+
+<xsl:template match="td">
+	<td>
+		<xsl:apply-templates select="@*" mode="atts" />
+		<xsl:apply-templates />
+	</td>
+</xsl:template>
+
+<xsl:template match="th">
+	<th>
+		<xsl:apply-templates select="@*" mode="atts" />
+		<xsl:apply-templates />
+	</th>
+</xsl:template>
+
+<xsl:template match="thead">
+	<thead>
+		<xsl:apply-templates select="@*" mode="atts" />
+		<xsl:apply-templates />
+	</thead>
+</xsl:template>
+
+<xsl:template match="tbody">
+	<tbody>
+		<xsl:apply-templates select="@*" mode="atts" />
+		<xsl:apply-templates />
+	</tbody>
+</xsl:template>
+
 <xsl:template match="script"></xsl:template>
 
 <xsl:template match="@*" mode="atts">

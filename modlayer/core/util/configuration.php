@@ -492,7 +492,7 @@ class Configuration
 	{
 		$appID = Configuration::Query('/configuration/applicationID')->item(0)->nodeValue;
 		if($sanitize){
-			$appID = str_replace(' ', '-', $appID);
+			$appID = str_replace(' ', '_', $appID);
 			// $appID = preg_replace('/[^A-Za-z0-9\-]/', '', $appID);
 			$appID = preg_replace('/[^A-Za-z\-]/', '', $appID);
 		}
