@@ -16,7 +16,7 @@
 	<xsl:param name="elements">summary</xsl:param>
 	<xsl:param name="width">500</xsl:param>
 	<xsl:param name="height">200</xsl:param>
-	<xsl:param name="css"><xsl:value-of select="$adminPath"/>/ui/css/editor.css</xsl:param>
+	<xsl:param name="css"><xsl:value-of select="$adminPath"/>/ui/tinymce/editor.css</xsl:param>
 
 	<!-- Encapsulate tinymce.init into a function to load on demand (for hidden areas) -->
 	<xsl:param name="funcname" />
@@ -61,7 +61,7 @@
 	<xsl:param name="height">200</xsl:param>
 	<xsl:param name="item_id">0</xsl:param>
 	<xsl:param name="item_module">0</xsl:param>
-	<xsl:param name="css"><xsl:value-of select="$adminPath"/>/ui/css/editor.css</xsl:param>
+	<xsl:param name="css"><xsl:value-of select="$adminPath"/>/ui/tinymce/editor.css</xsl:param>
 
 	<!-- 
 		Encapsulate tinymce.init into a function to load on demand (for hidden areas) 

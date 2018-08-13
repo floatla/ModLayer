@@ -23,6 +23,7 @@ Abstract Class Collection {
 	protected $order          = false;
 	protected $tableFilters   = '';
 	public    $stateField     = false;
+	public    $cacheTTL       = 3600*12;
 
 	/**
 	 * __construct Constructor de la clase Collection
@@ -1050,7 +1051,7 @@ Abstract Class Collection {
 	public function LoadFromCache()
 	{
 		$folder  = $this->params['module'];
-		$expires = 3600*12;
+		
 		$filters = array(
 			'pageSize' => $this->params['pageSize'],
 			'currentPage' => $this->params['currentPage'],
@@ -1076,7 +1077,7 @@ Abstract Class Collection {
 			return $response;
 
 		$response = $this->Get();
-		Cache::setKey($key, $response, $expires, $folder);
+		Cache::setKey($key, $response, $this->cacheTTL, $folder);
 
 		return $response;
 	}
