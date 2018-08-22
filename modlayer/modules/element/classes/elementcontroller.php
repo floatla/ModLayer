@@ -212,7 +212,13 @@ class ElementController extends AdminController
 
 		$data = $item->Get();
 
-		Util::redirect('/' . $module . '/' . $id . '/' . $data['slug']);
+		if(isset($data['url'])){
+			Util::redirect(str_replace('?','', $data['url']));
+			die;	
+		}
+
+		$slug = (isset($data['slug'])) ? $data['slug'] : Util::Sanitize($data['title']);
+		Util::redirect('/' . $id . '-' . $slug);	
 	}
 
 
