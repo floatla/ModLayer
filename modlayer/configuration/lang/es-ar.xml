@@ -46,6 +46,7 @@
 		<auto_import>Importación automática</auto_import>
 		<alert_no_relation>Sin</alert_no_relation>
 		<labels>
+			<date>Fecha Creación</date>
 			<radio_yes>Si</radio_yes>
 			<radio_no>No</radio_no>
 		</labels>

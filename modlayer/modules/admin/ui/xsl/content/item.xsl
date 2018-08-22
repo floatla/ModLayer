@@ -254,71 +254,72 @@
 		<xsl:param name="item" />
 
 		<div class="sidebar-box currentState">
-			<xsl:choose>
-				<xsl:when test="$config/module/options/group[@name='item-states']/option">
-					<xsl:for-each select="$config/module/options/group[@name='item-states']/option">
-						<p class="pub" data-role="{@value}">
-							<b><xsl:value-of select="$language/item_editor/status" /></b>&#xa0;<!-- 
-							 --><xsl:call-template name="lang-eval">
-								<xsl:with-param name="pPath" select="@label" />
-							</xsl:call-template>
-							<br/>
-							<a href="#" onclick="jsItem.changeState({$item/@id}, {@turns});return false;" class="btn state-{@turns}">
-								<xsl:value-of select="@turns_label"  />
-							</a>
-						</p>
-					</xsl:for-each>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:for-each select="$config/element_conf/group[@name='item-states']/option">
-						<p class="pub" data-role="{@value}">
-							<b><xsl:value-of select="$language/item_editor/status" /></b>&#xa0;<!-- 
-							 --><xsl:call-template name="lang-eval">
-								<xsl:with-param name="pPath" select="@label" />
-							</xsl:call-template>
-							<br/>
-							<a href="#" onclick="jsItem.changeState({$item/@id}, {@turns});return false;" class="btn state-{@turns}">
-								<xsl:value-of select="@turns_label"  />
-							</a>
-						</p>
-					</xsl:for-each>
-				</xsl:otherwise>
-			</xsl:choose>
-			<div class="loader">
-				<img src="{$adminPath}/ui/imgs/icons/ripple.svg" width="56" />
-			</div>
-			<!-- Manejar los estados desde la configuración del módulo -->
-			
-			<xsl:if test="$config/module/options/group[@name='settings']/option[@name='deferredPublication']/@value = 'true'">
-				<div class="deferred floatFix">
-					<span class="right">
-						<input type="radio" name="deferred" value="1" id="deferred1" onclick="jsItem.deferred_on();">
-							<xsl:if test="$item/@state = 4">
-								<xsl:attribute name="checked">checked</xsl:attribute>
-							</xsl:if>
-						</input>
-						<label for="deferred1"><xsl:value-of select="$language/item_editor/labels/radio_yes" /></label>
-						<input type="radio" name="deferred" value="0" id="deferred0" onclick="jsItem.deferred_off();">
-							<xsl:if test="$item/@state != 4">
-								<xsl:attribute name="checked">checked</xsl:attribute>
-							</xsl:if>
-						</input>
-						<label for="deferred0"><xsl:value-of select="$language/item_editor/labels/radio_no" /></label>
-					</span>
-					<xsl:value-of select="$language/item_editor/labels/deferred_publication" />
-					<div class="deferredDate">
-						<xsl:if test="$item/@state = 4">
-							<xsl:attribute name="class">deferredDate open</xsl:attribute>
-						</xsl:if>
-						<input type="text" name="deferred_publication" value="{$item/deferred_publication}" class="datefield"  id="pub-field" readonly="true"/>
-					</div>
+			<xsl:if test="not($config/module/options/group[@name='settings']/option[@name='publishable']/@value = 'false')">
+				<xsl:choose>
+					<xsl:when test="$config/module/options/group[@name='item-states']/option">
+						<xsl:for-each select="$config/module/options/group[@name='item-states']/option">
+							<p class="pub" data-role="{@value}">
+								<b><xsl:value-of select="$language/item_editor/status" /></b>&#xa0;<!-- 
+								 --><xsl:call-template name="lang-eval">
+									<xsl:with-param name="pPath" select="@label" />
+								</xsl:call-template>
+								<br/>
+								<a href="#" onclick="jsItem.changeState({$item/@id}, {@turns});return false;" class="btn state-{@turns}">
+									<xsl:value-of select="@turns_label"  />
+								</a>
+							</p>
+						</xsl:for-each>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:for-each select="$config/element_conf/group[@name='item-states']/option">
+							<p class="pub" data-role="{@value}">
+								<b><xsl:value-of select="$language/item_editor/status" /></b>&#xa0;<!-- 
+								 --><xsl:call-template name="lang-eval">
+									<xsl:with-param name="pPath" select="@label" />
+								</xsl:call-template>
+								<br/>
+								<a href="#" onclick="jsItem.changeState({$item/@id}, {@turns});return false;" class="btn state-{@turns}">
+									<xsl:value-of select="@turns_label"  />
+								</a>
+							</p>
+						</xsl:for-each>
+					</xsl:otherwise>
+				</xsl:choose>
+				<div class="loader">
+					<img src="{$adminPath}/ui/imgs/icons/ripple.svg" width="56" />
 				</div>
+				<!-- Manejar los estados desde la configuración del módulo -->
+				
+				<xsl:if test="$config/module/options/group[@name='settings']/option[@name='deferredPublication']/@value = 'true'">
+					<div class="deferred floatFix">
+						<span class="right">
+							<input type="radio" name="deferred" value="1" id="deferred1" onclick="jsItem.deferred_on();">
+								<xsl:if test="$item/@state = 4">
+									<xsl:attribute name="checked">checked</xsl:attribute>
+								</xsl:if>
+							</input>
+							<label for="deferred1"><xsl:value-of select="$language/item_editor/labels/radio_yes" /></label>
+							<input type="radio" name="deferred" value="0" id="deferred0" onclick="jsItem.deferred_off();">
+								<xsl:if test="$item/@state != 4">
+									<xsl:attribute name="checked">checked</xsl:attribute>
+								</xsl:if>
+							</input>
+							<label for="deferred0"><xsl:value-of select="$language/item_editor/labels/radio_no" /></label>
+						</span>
+						<xsl:value-of select="$language/item_editor/labels/deferred_publication" />
+						<div class="deferredDate">
+							<xsl:if test="$item/@state = 4">
+								<xsl:attribute name="class">deferredDate open</xsl:attribute>
+							</xsl:if>
+							<input type="text" name="deferred_publication" value="{$item/deferred_publication}" class="datefield"  id="pub-field" readonly="true"/>
+						</div>
+					</div>
+				</xsl:if>
+				<hr />
 			</xsl:if>
 
-			<hr />
-
 			<p class="field floatFix">
-				<label><xsl:value-of select="$language/item_editor/labels/article_date" /></label>
+				<label><xsl:value-of select="$language/item_editor/labels/date" /></label>
 				<input type="text" name="created_at" value="{$item/@created_at}" class="datefield" readonly="true"/>
 			</p>
 
@@ -349,8 +350,6 @@
 					<xsl:value-of select="$item/publishedby" />&#xa0;<abbr class="timeago" title="{$item/published_at}"><xsl:value-of select="$item/published_at"/></abbr>
 				</p>
 			</xsl:if>
-
-		
 		</div>
 	</xsl:template>
 	<!-- / Publicación -->
@@ -456,7 +455,7 @@
 			</label>
 			<ul class="multimedia {$node} with-order" data-role="multimedia" data-type="{@type_id}" module="{@name}">
 				<xsl:for-each select="$multimedias/images/image">
-					<xsl:sort order="ascending" select="relation_order" />
+					<xsl:sort order="ascending" select="relation_order" data-type="number" />
 					<li item_id="{@image_id}" rel_id="{rel_id}">
 						<div class="wrapper">
 							<span class="frame">
