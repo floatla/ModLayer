@@ -402,6 +402,7 @@ Class Skin extends Templates
 	{
 		$ttl       = $content->getAttribute('ttl');
 		$remoteUrl = Configuration::Query('remote', $content);
+		$isJson    = $content->getAttribute('json_decode');
 		$localpath = PathManager::GetApplicationPath() . $remoteUrl->item(0)->getAttribute('write');
 
 		if(file_exists($localpath) && time() < filemtime($localpath) + $ttl)
@@ -413,7 +414,11 @@ Class Skin extends Templates
 		{
 			$url = $remoteUrl->item(0)->nodeValue;
 			$url = str_replace('&amp;', '&', $url);
-			return Util::PreFetchFile($url, $localpath, $ttl);
+
+			$lx = ($isJson) ? false : true;
+			$sx = ($isJson) ? false : true;
+
+			return Util::PreFetchFile($url, $localpath, $ttl, $lx, $sx);		
 		}
 	}
 
