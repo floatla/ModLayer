@@ -505,6 +505,16 @@ class Configuration
 		return self::Query("/configuration/modules/module[@name='".$mod."']/options/group[@name='".$groupName."']/*");
 	}
 
+	public static function GetOptionValue($groupName, $optionName, $module=false)
+	{
+		$mod = ($module) ? $module : Application::GetModule();
+		$option = self::Query("/configuration/modules/module[@name='".$mod."']/options/group[@name='".$groupName."']/option[@name='".$optionName."']");	
+		if($option){
+			return $option->item(0)->getAttribute('value');
+		}
+		return false;
+	}
+
 	public static function RegisterEvents()
 	{
 		$events = Configuration::Query("//group[@name='events']/event");
